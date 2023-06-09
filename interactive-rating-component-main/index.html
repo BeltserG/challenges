@@ -15,32 +15,35 @@
   </style>
 </head>
 <body>
-  <section class="card">
-    <div class="circle">
-      <img src="images/icon-star.svg" alt="star image">
-    </div>
-    <h2 class="card-heading">How did we do?</h2>
-    <p class="card-text">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-    <div class="choice-buttons">
-      <button class="choice-button circle">1</button>
-      <button class="choice-button circle">2</button>
-      <button class="choice-button circle">3</button>
-      <button class="choice-button circle">4</button>
-      <button class="choice-button circle">5</button>
-    </div>
-    <button class="submit-button">Submit</button>
+  <section class="card-container">
+    <section class="card card-question">
+      <div class="circle">
+        <img src="images/icon-star.svg" alt="star image">
+      </div>
+      <h2 class="card-heading">How did we do?</h2>
+      <p class="card-text">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <div class="choice-buttons">
+        <button class="choice-button circle">1</button>
+        <button class="choice-button circle">2</button>
+        <button class="choice-button circle">3</button>
+        <button class="choice-button circle">4</button>
+        <button class="choice-button circle">5</button>
+      </div>
+      <button class="submit-button">Submit</button>
+    </section>
+    <section class="card card-thankyou" style="z-index:-1">
+      <div class="hero-image">
+        <img src="images/illustration-thank-you.svg" alt="">
+      </div>
+      <div class="rated">
+        <h3 id="rating">You selected 4 out of 5</h3>
+      </div>
+      <h2 class="card-thankyou-heading">Thank you!</h2>
+      <p class="card-text">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </section>
   </section>
-  <section class="card card-thankyou" style="z-index:1">
-    <div class="hero-image">
-      <img src="images/illustration-thank-you.svg" alt="">
-    </div>
-    <div class="rated">
-      <h3>You selected 4 out of 5</h3>
-    </div>
-    <h2 class="card-thankyou-heading">Thank you!</h2>
-    <p class="card-text">We appreciate you taking the time to give a rating. If you ever need more support, 
-      don’t hesitate to get in touch!</p>
-  </section>
+
 
   <!-- Thank you state start -->
 
@@ -58,5 +61,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Georgii Beltser</a>.
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

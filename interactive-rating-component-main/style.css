@@ -18,7 +18,18 @@ img {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-container {
   position: relative;
+  width: 330px;
+  height: 360px;
+  margin: auto 0;
 }
 
 .card {
@@ -110,6 +121,10 @@ body {
 }
 
 .choice-button:hover {
+  background-color: hsl(25, 97%, 53%);
+}
+
+.active {
   background-color: hsl(25, 97%, 53%);
 }
 

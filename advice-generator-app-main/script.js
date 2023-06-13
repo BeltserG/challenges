@@ -7,6 +7,6 @@ async function getQuotes(){
     quote.innerHTML = `${object.slip.advice}`;
 
 }
-
+getQuotes();
 const button = document.querySelector('.card__roll--button');
 button.addEventListener('click', getQuotes);

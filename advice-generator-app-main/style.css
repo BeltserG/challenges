@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(218, 23%, 16%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  position: relative;
+  width: 345px;
+  padding: 0.85rem 0.85rem 0 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 0.4rem;
+}
+
+.card__header {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: hsl(150, 100%, 66%);
+  margin: 0.7rem 0;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.card__quote {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  color: hsl(193, 38%, 86%);
+  line-height: 31px;
+}
+
+.card__divider {
+  margin-top: 0.8rem;
+}
+
+.card__roll--button {
+  transform: translateY(50%);
+  background-color: hsl(150, 100%, 66%);
+  border: 0;
+  outline: 0;
+  padding: 0.75rem;
+  border-radius: 50%;
+}
+
+.card__roll--button:hover {
+  box-shadow: 0 0 30px 4px hsl(150, 100%, 66%);
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .card {
+    width: 550px;
+  }
+}/*# sourceMappingURL=style.css.map */

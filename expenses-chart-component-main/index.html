@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Expenses chart component</title>
+</head>
+<body>
+  <section class="card">
+    <section class="balance-section">
+      <div role="text" class="total-balance">
+        <h2 class="total-balance__header">My balance</h2>
+        <p class="balance">$921.48</p>
+      </div>
+      <div role="img" class="circles-img">
+        <img src="images/logo.svg" alt="circles">
+      </div>
+    </section>
+    <section class="graph-section">
+      <h2 class="graph-section__header">Spending - Last 7 days</h2>
+      <div class="graph-section__graph">
+        <div class="graph__scale">
+          <span class="graph__scale--ammount">1</span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">mon</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">tue</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">wed</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">thu</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">fri</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">sat</span>
+        </div>
+        <div class="graph__scale">
+          <span class="graph__scale--ammount"></span>
+          <div class="graph__scale--bar"></div>
+          <span class="graph__scale--day">sun</span>
+        </div>
+      </div>
+      <div class="graph-section__month-comparison">
+        <div role="text" class="month-comparison__total-balance">
+          <h2 class="total-balance--header">Total this month</h2>
+          <p class="total-balance--text">$478.33</p>
+        </div>
+        <div role="text" class="month-comparison__change">
+          <p class="change--percent">+2.4%</p>
+          <span class="change--description">from last month</span>
+        </div>
+      </div>
+    </section>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

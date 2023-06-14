@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  background-color: hsl(27, 66%, 92%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  width: 335px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.balance-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 1.2rem;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.total-balance {
+  color: hsl(33, 100%, 98%);
+}
+
+.total-balance__header {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.balance {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.circles-img img {
+  width: 3.3rem;
+}
+
+.graph-section {
+  background-color: hsl(33, 100%, 98%);
+  border-radius: 0.5rem;
+  padding: 1.4rem 1.2rem;
+}
+
+.graph-section__header {
+  text-align: left;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: hsl(25, 47%, 15%);
+}
+
+.graph-section__graph {
+  display: flex;
+  justify-content: space-between;
+  height: 220px;
+  margin-top: 1.2rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 2px solid rgba(147, 134, 123, 0.164);
+}
+
+.graph__scale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.graph__scale--ammount {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(33, 100%, 98%);
+  font-size: 0.75rem;
+  height: 1.4rem;
+  border-radius: 0.25rem;
+  background-color: hsl(25, 47%, 15%);
+  width: 95%;
+}
+
+.graph__scale--bar {
+  flex: 1;
+  border-radius: 0.24rem;
+  width: 75%;
+  background-color: hsl(10, 79%, 65%);
+}
+
+.graph__scale--ammount:has(+ .graph__scale--bar:hover) {
+  visibility: visible;
+}
+
+.graph__scale--bar:hover {
+  background-color: hsl(186, 34%, 60%);
+}
+
+.graph__scale--day {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  color: hsl(25, 47%, 15%);
+  opacity: 0.75;
+}
+
+.graph-section__month-comparison {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: hsl(25, 47%, 15%);
+  margin-top: 1.4rem;
+}
+
+.total-balance--header {
+  text-align: left;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.total-balance--text {
+  text-align: left;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.month-comparison__change {
+  align-self: flex-end;
+}
+
+.change--percent {
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.change--description {
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 24px;
+  }
+  .card {
+    width: 540px;
+  }
+}/*# sourceMappingURL=styles.css.map */

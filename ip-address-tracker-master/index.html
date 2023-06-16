@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+  <title>Frontend Mentor | IP Address Tracker</title>
+</head>
+<body>
+  <section class="tracker-container">
+    <header class="tracker">
+      <h1 class="tracker__header">IP Address Tracker</h1>
+      <form action="/" class="tracker__input">
+        <input type="text" name="ip" id="ip" required>
+        <button type="button">></button>
+      </form>
+      <div class="tracker_data">
+        <div class="data-section">
+          <h2 class="data-section--header">IP Address</h2>
+          <p class="data-section--text"></p>
+        </div>
+        <div class="data-section">
+          <h2 class="data-section--header">Location</h2>
+          <p class="data-section--text"></p>
+        </div>
+        <div class="data-section">
+          <h2 class="data-section--header">timezone</h2>
+          <p class="data-section--text"></p>
+        </div>
+        <div class="data-section">
+          <h2 class="data-section--header">isp</h2>
+          <p class="data-section--text"></p>
+        </div>
+      </div>
+    </header>
+    <div class="tracker__map" id="map"></div>
+  </section>
+
+  <!-- IP Address Tracker
+
+  Search for any IP address or domain
+
+  IP Address
+  Location
+  Timezone
+    UTC add offset value dynamically using the API
+  ISP -->
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -17,14 +17,15 @@
 <body>
   <main>
     <section class="tracker-container--background">
-      <div><img src="images/pattern-bg-mobile.png" alt="background was here"></div>
+      <!-- <div><img src="images/pattern-bg-mobile.png" alt="background was here"></div> -->
+      <div class="background-image"></div>
       <div class="tracker__map" id="map"></div>
     </section>
     <section class="tracker-container--main">
         <h1 class="tracker__header">IP Address Tracker</h1>
         <form action="/" class="tracker__input">
-          <input type="text" name="ip" id="ip" required>
-          <button type="button">
+          <input type="text" name="ip-input" id="ip-input" required placeholder="Search for any IP address or domain">
+          <button type="button" id="request-button">
             <span class="material-symbols-outlined">
               chevron_right
             </span>
@@ -37,7 +38,7 @@
           </div>
           <div class="data-section">
             <h2 class="data-section--header">Location</h2>
-            <p class="data-section--text" id="location">Aktobe City</p>
+            <p class="data-section--text" id="location">Aktobe City Kazakhstan</p>
           </div>
           <div class="data-section">
             <h2 class="data-section--header">timezone</h2>
@@ -51,5 +52,5 @@
     </section>
   </main>
 </body>
-<script src="script.js"></script>
+<script src="script-main.js"></script>
 </html>

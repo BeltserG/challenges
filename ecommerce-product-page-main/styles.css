@@ -27,9 +27,9 @@ table {
 #lightbox {
   position: fixed;
   height: 100vh;
-  width: 100vh;
-  background-color: hsl(0, 0%, 0%);
-  opacity: 0;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  display: none;
   z-index: 90;
   transition: 500ms;
 }
@@ -56,12 +56,14 @@ table {
 
 .navigation__buttons--burger {
   z-index: 99;
+  cursor: pointer;
 }
 
 .navigation__buttons--cross {
   visibility: hidden;
   position: absolute;
   z-index: 99;
+  cursor: pointer;
 }
 
 .navigation__menu {
@@ -81,7 +83,6 @@ table {
 .menu__list {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   list-style: none;
   margin-left: 1.5rem;
   margin-top: 5rem;
@@ -89,16 +90,80 @@ table {
 }
 
 .menu__list--option {
-  margin-top: 1rem;
+  text-align: left;
+  margin-top: 1.2rem;
   font-weight: 700;
   font-size: 1.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.menu__list--option:hover {
+  text-decoration: underline;
+  text-decoration-color: hsl(26, 100%, 55%);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+  cursor: pointer;
 }
 
 .header__logo {
   margin-left: 1rem;
 }
 
+.header__cart {
+  cursor: pointer;
+}
+
 .header__avatar {
   margin-left: 1rem;
   width: 1.5rem;
+  cursor: pointer;
+}
+
+.image-slider {
+  display: flex;
+  position: relative;
+  width: 375px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slider__slides {
+  display: flex;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(140, 172, 134);
+  display: flex;
+  align-items: center;
+  transition: 0.6s;
+}
+
+.buttons-container {
+  position: absolute;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.slider__button--previous,
+.slider__button--next {
+  background-color: hsl(0, 0%, 100%);
+  margin: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.slider__button--previous img,
+.slider__button--next img {
+  width: 0.6rem;
 }/*# sourceMappingURL=styles.css.map */

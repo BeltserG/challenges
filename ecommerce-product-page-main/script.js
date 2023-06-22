@@ -4,6 +4,7 @@ function headerInteraction() {
     let navBar = document.querySelector('.navigation__buttons');
     let navListContainer = document.querySelector('.navigation__menu');
     let lightbox = document.querySelector("#lightbox");
+    
 
     navBar.addEventListener('click', () => {
         if (hamburger.getAttribute("aria-expanded") === "false") {
@@ -27,6 +28,22 @@ function headerInteraction() {
         cross.style.visibility = "hidden";
         navListContainer.style.setProperty("--translateX", "translateX(-100%)");
         lightbox.style.display = "none";
+    })
+
+    let cartIcon = document.querySelector("#cart-icon");
+    let cartDropdown = document.querySelector(".cart__dropdown");
+    cartIcon.addEventListener("click", () =>{
+        if (cartDropdown.getAttribute("aria-expanded") === "true") {
+            cartDropdown.style.opacity = "0";
+            cartDropdown.style.visibility = "hidden";
+            cartDropdown.style.setProperty("--animation-slide", "1rem");
+            cartDropdown.setAttribute("aria-expanded",false);
+        }else{
+            cartDropdown.style.opacity = "1";
+            cartDropdown.style.visibility = "visible";
+            cartDropdown.style.setProperty("--animation-slide", "0rem");
+            cartDropdown.setAttribute("aria-expanded",true);
+        }
     })
 }
 

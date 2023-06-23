@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 *, *::after, *::before {
   box-sizing: border-box;
-  text-align: center;
 }
 
 html, body, p, h1, h2, h3, h4, h5, h6 {
@@ -11,7 +10,6 @@ html, body, p, h1, h2, h3, h4, h5, h6 {
 
 html {
   font-size: 16px;
-  background-color: bisque;
   font-family: "Kumbh Sans", sans-serif;
 }
 
@@ -39,7 +37,9 @@ table {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -55,14 +55,14 @@ table {
 }
 
 .navigation__buttons--burger {
-  z-index: 99;
+  z-index: 9;
   cursor: pointer;
 }
 
 .navigation__buttons--cross {
   visibility: hidden;
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   cursor: pointer;
 }
 
@@ -95,13 +95,16 @@ table {
   font-weight: 700;
   font-size: 1.1rem;
   border-bottom: 2px solid transparent;
+  transition: 100ms;
+  -webkit-text-decoration: underline solid hsla(0, 0%, 100%, 0) 3px;
+          text-decoration: underline solid hsla(0, 0%, 100%, 0) 3px;
+  text-underline-offset: 4px;
 }
 
 .menu__list--option:hover {
-  text-decoration: underline;
-  text-decoration-color: hsl(26, 100%, 55%);
+  -webkit-text-decoration: underline solid hsl(26, 100%, 55%) 3px;
+          text-decoration: underline solid hsl(26, 100%, 55%) 3px;
   text-underline-offset: 4px;
-  text-decoration-thickness: 3px;
   cursor: pointer;
 }
 
@@ -132,6 +135,7 @@ table {
   visibility: hidden;
   opacity: 0;
   transition: 500ms;
+  display: flex;
   flex-direction: column;
 }
 
@@ -213,4 +217,131 @@ table {
 .slider__button--previous img,
 .slider__button--next img {
   width: 0.6rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 1.5rem;
+}
+
+.product--company {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.product--name {
+  color: hsl(220, 13%, 13%);
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.95rem;
+}
+
+.product--info {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  color: hsl(219, 9%, 45%);
+}
+
+.product--price {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.current-price {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: hsl(220, 13%, 13%);
+}
+
+.discount {
+  margin-left: 1rem;
+  background-color: #ffede0;
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.old-price {
+  flex: 1;
+  font-size: 1rem;
+  text-align: right;
+  color: hsl(220, 14%, 75%);
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.old-price:before {
+  content: "";
+  height: 0.85rem;
+  width: 3.9rem;
+  position: absolute;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.product--addingbox {
+  margin-top: 1.6rem;
+}
+
+.addingbox__amount {
+  display: flex;
+  background-color: hsl(223, 64%, 98%);
+  align-items: center;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.amount--field {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+}
+
+.add-image,
+.remove-image {
+  height: 100%;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.addingbox__add-button {
+  border: 0;
+  background-color: hsl(26, 100%, 55%);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px 2px hsla(26, 100%, 55%, 0.4);
+}
+
+.addingbox__add-button:hover,
+.add-image:hover,
+.remove-image:hover {
+  opacity: 0.75;
+}
+
+.add-button--image {
+  filter: brightness(0%) invert(96%) sepia(92%) saturate(294%) hue-rotate(299deg) brightness(99%) contrast(104%);
+}
+
+.add-button--text {
+  color: #ffede0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-left: 0.75rem;
 }/*# sourceMappingURL=styles.css.map */

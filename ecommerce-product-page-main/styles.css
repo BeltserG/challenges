@@ -134,7 +134,7 @@ table {
   border-radius: 1rem;
   visibility: hidden;
   opacity: 0;
-  transition: 500ms;
+  transition: 500ms ease-in-out;
   display: flex;
   flex-direction: column;
 }
@@ -240,6 +240,7 @@ table {
   font-size: 1.7rem;
   font-weight: 700;
   line-height: 1.95rem;
+  text-transform: capitalize;
 }
 
 .product--info {
@@ -282,7 +283,7 @@ table {
 
 .old-price:before {
   content: "";
-  height: 0.85rem;
+  height: 0.75rem;
   width: 3.9rem;
   position: absolute;
   border-bottom: 1px solid hsl(220, 14%, 75%);

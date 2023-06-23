@@ -1,3 +1,20 @@
+async function initProductCard() {
+    const response = await fetch("products.json");
+    const data = await response.json();
+    const productNameField = document.querySelector(".product--name");
+    productNameField.innerHTML = data[0].name;
+    const productDescriptionField = document.querySelector(".product--info");
+    productDescriptionField.innerHTML = data[0].description;
+    const productCompanyField = document.querySelector(".product--company");
+    productCompanyField.innerHTML = data[0].company;
+    const productCurrentPriceField = document.querySelector(".current-price");
+    productCurrentPriceField.innerHTML = `$${data[0].price.toFixed(2)}`;
+    const productOldPriceField = document.querySelector(".old-price");
+    productOldPriceField.innerHTML = `$${data[0]["old-price"].toFixed(2)}`;
+    const discountField = document.querySelector(".discount");
+    discountField.innerHTML = `${(data[0]["old-price"] - data[0].price)/data[0]["old-price"]*100}%`;
+}
+
 function headerInteraction() {
     let hamburger = document.querySelector('.navigation__buttons--burger');
     let cross = document.querySelector('.navigation__buttons--cross');
@@ -107,7 +124,7 @@ function productCardInteraction() {
         amountField.innerHTML = amount;
     })
 }
-
+initProductCard();
 productCardInteraction();
 headerInteraction();
 sliderInteraction();

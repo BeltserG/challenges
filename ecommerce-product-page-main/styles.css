@@ -55,14 +55,14 @@ table {
 }
 
 .navigation__buttons--burger {
-  z-index: 9;
+  z-index: 92;
   cursor: pointer;
 }
 
 .navigation__buttons--cross {
   visibility: hidden;
   position: absolute;
-  z-index: 9;
+  z-index: 92;
   cursor: pointer;
 }
 

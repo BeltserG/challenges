@@ -9,8 +9,9 @@
   <title>Frontend Mentor | E-commerce product page</title>
 </head>
 <body>
-  <div id="lightbox"></div>
+  
   <header class="header">
+    <div id="lightbox"></div>
     <div>
       <nav class="header__navigation">
         <div class="navigation__buttons">
@@ -31,16 +32,38 @@
         </div> 
       </nav>
       <div class="header__logo">
-        <img src="images/logo.svg" alt="sneakers-logo">
+        <a href="#">
+          <img src="images/logo.svg" alt="sneakers-logo" id="cart-logo">
+        </a>
       </div>
     </div>
     <div>
       <div class="header__cart">
-        <img src="images/icon-cart.svg" alt="cart" id="cart-icon">
+        <div class="cart-icon-container">
+          <img src="images/icon-cart.svg" alt="cart" id="cart-icon">
+          <div id="cart-amount">1</div>
+        </div>
         <div class="cart__dropdown">
           <h3 class="cart__dropdown--header">Cart</h3>
           <div class="cart__dropdown--content" aria-label="shopping cart list" aria-expanded="false">
             <p>Your cart is empty.</p>
+            <!-- <div class="content--shoping__list">
+              <div class="shoping__list__option">
+                <div class="shoping__list--thumbnail">
+                  <img src="images/image-product-1-thumbnail.jpg" alt="product image">
+                </div>
+                <div class="shoping__list--description">
+                  <p class="description__product--name">fall limited edition sneakers</p>
+                  <p class="description__product--cost">$125.00 x 3 <strong>$375.00</strong></p>
+                </div>
+                <div class="shoping__list--delete-icon">
+                  <img src="images/icon-delete.svg" alt="">
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="content--checkout-button button" style="box-shadow:none;">
+              <p>Checkout</p>
+            </div> -->
           </div>
         </div>
       </div>
@@ -94,13 +117,12 @@
             <img src="images/icon-plus.svg" alt="add button">
           </button>
         </div>
-        <button class="addingbox__add-button">
+        <button class="addingbox__add-button button">
           <img src="images/icon-cart.svg" alt="" class="add-button--image">
           <p class="add-button--text">Add to cart</p>
         </button>
       </div>
     </section>
-    <!-- <p style="font-size: 4rem">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora a fugiat incidunt accusantium perspiciatis iste nulla nesciunt consectetur officiis qui? In blanditiis numquam repellat. Cumque recusandae amet magni ab beatae.</p> -->
   </main>
 </body>
 <script src="script.js"></script>

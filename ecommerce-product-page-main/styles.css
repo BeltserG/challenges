@@ -24,8 +24,10 @@ table {
 
 #lightbox {
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: hsla(0, 0%, 0%, 0.5);
   display: none;
   z-index: 90;
@@ -39,7 +41,7 @@ table {
   padding: 1.4rem;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 91;
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -116,16 +118,35 @@ table {
   transition: 500ms;
 }
 
+.cart-icon-container {
+  position: relative;
+}
+
 .header__cart img:hover {
   filter: brightness(0%);
   cursor: pointer;
+}
+
+#cart-amount {
+  width: 1.2rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-size: 0.6rem;
+  padding: 1px;
+  background-color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  color: #ffede0;
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  visibility: hidden;
 }
 
 .cart__dropdown {
   --menu-margin: .5rem;
   --animation-slide: 1rem;
   width: calc(375px - var(--menu-margin) * 2);
-  height: calc(270px - var(--menu-margin) * 2);
+  min-height: calc(270px - var(--menu-margin) * 2);
   position: absolute;
   top: calc(100% + var(--menu-margin) - var(--animation-slide));
   right: var(--menu-margin);
@@ -137,13 +158,14 @@ table {
   transition: 500ms ease-in-out;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
 }
 
 .cart__dropdown--header {
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: hsl(220, 13%, 13%);
-  padding: 1.3rem;
+  padding-bottom: 1.8rem;
   font-weight: 700;
   border-bottom: 1px solid hsla(0, 0%, 63%, 0.3);
 }
@@ -154,8 +176,44 @@ table {
   color: hsl(219, 9%, 45%);
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+}
+
+.cart__dropdown--content > p {
+  text-align: center;
+}
+
+.content--shoping__list {
+  flex: 1;
+}
+
+.shoping__list__option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+
+.shoping__list--thumbnail img {
+  border-radius: 0.2rem;
+  width: 3.25rem;
+}
+
+.shoping__list--description {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.description__product--cost {
+  text-transform: none;
+}
+
+.description__product--cost strong {
+  font-weight: 700;
+  color: hsl(220, 13%, 13%);
 }
 
 .header__avatar {
@@ -173,7 +231,7 @@ table {
 .image-slider {
   display: flex;
   position: relative;
-  width: 375px;
+  width: 100%;
   height: 300px;
   overflow: hidden;
 }
@@ -300,6 +358,7 @@ table {
   height: 3.5rem;
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .amount--field {
@@ -316,7 +375,7 @@ table {
   cursor: pointer;
 }
 
-.addingbox__add-button {
+.button {
   border: 0;
   background-color: hsl(26, 100%, 55%);
   display: flex;
@@ -325,7 +384,6 @@ table {
   align-items: center;
   border-radius: 0.5rem;
   height: 3.5rem;
-  margin-top: 1rem;
   cursor: pointer;
   box-shadow: 0 10px 20px 2px hsla(26, 100%, 55%, 0.4);
 }
@@ -340,7 +398,7 @@ table {
   filter: brightness(0%) invert(96%) sepia(92%) saturate(294%) hue-rotate(299deg) brightness(99%) contrast(104%);
 }
 
-.add-button--text {
+.button p {
   color: #ffede0;
   font-weight: 700;
   font-size: 0.95rem;

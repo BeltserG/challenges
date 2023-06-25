@@ -13,6 +13,7 @@ async function initProductCard() {
     productOldPriceField.innerHTML = `$${data[0]["old-price"].toFixed(2)}`;
     const discountField = document.querySelector(".discount");
     discountField.innerHTML = `${(data[0]["old-price"] - data[0].price)/data[0]["old-price"]*100}%`;
+    productCardInteraction(data);
 }
 
 function headerInteraction() {
@@ -38,7 +39,7 @@ function headerInteraction() {
             lightbox.style.display = "none";
         }
     })
-
+    
     lightbox.addEventListener("click", () => {
         hamburger.style.visibility = "visible";
         hamburger.setAttribute("aria-expanded", false);
@@ -90,7 +91,9 @@ function sliderInteraction() {
     }
 
     prevArrow.addEventListener('click', () => {
-        currentSlide--;
+        if (currentSlide > 0){
+            currentSlide--;
+        }
         if (currentSlide >= 0){
             changeSlide(currentSlide);
         }
@@ -106,10 +109,12 @@ function sliderInteraction() {
     })
 }
 
-function productCardInteraction() {
+function productCardInteraction(data) {
     const removeButton = document.querySelector(".remove-image");
     const addButton = document.querySelector(".add-image");
     const amountField = document.querySelector(".amount--field");
+    const addToCartButton = document.querySelector(".addingbox__add-button");
+    const add = document.querySelector(".addingbox__add-button");
     let amount = 0;
 
     amountField.innerHTML = amount;
@@ -123,8 +128,44 @@ function productCardInteraction() {
         amount += 1;
         amountField.innerHTML = amount;
     })
+    addToCartButton.addEventListener("click", () =>{
+        if (amount > 0) {
+            addToCart(amount, data);
+        }
+        
+    })
+}
+
+function addToCart(amount, data) {
+    const shopingCart = document.querySelector(".cart__dropdown--content");
+    const iconAmount = document.querySelector("#cart-amount");
+    iconAmount.style.visibility = "visible";
+    iconAmount.innerHTML = `${amount}`;
+    shopingCart.innerHTML = 
+           `<div class="content--shoping__list">
+              <div class="shoping__list__option">
+                <div class="shoping__list--thumbnail">
+                  <img src="images/image-product-1-thumbnail.jpg" alt="product image">
+                </div>
+                <div class="shoping__list--description">
+                  <p class="description__product--name">${data[0].name}</p>
+                  <p class="description__product--cost">$${data[0].price.toFixed(2)} x ${amount} <strong>$${(data[0].price*amount).toFixed(2)}</strong></p>
+                </div>
+                <div class="shoping__list--delete-icon">
+                  <img src="images/icon-delete.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="content--checkout-button button" style="box-shadow:none;">
+                <p>Checkout</p>
+            </div>`
+    const deleteButton = document.querySelector('.shoping__list--delete-icon');
+    deleteButton.addEventListener('click', () => {
+        shopingCart.innerHTML = '<p>Your cart is empty.</p>';
+        iconAmount.style.visibility = "hidden";
+        
+    })
 }
 initProductCard();
-productCardInteraction();
 headerInteraction();
 sliderInteraction();

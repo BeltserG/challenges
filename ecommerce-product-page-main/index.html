@@ -21,6 +21,7 @@
           <div class="navigation__buttons--cross">
             <img src="images/icon-close.svg" alt="menu-icon-to-close">
           </div>
+        </div>
         <div class="navigation__menu">
           <ul class="menu__list">
             <li class="menu__list--option">Collections</li>
@@ -47,23 +48,6 @@
           <h3 class="cart__dropdown--header">Cart</h3>
           <div class="cart__dropdown--content" aria-label="shopping cart list" aria-expanded="false">
             <p>Your cart is empty.</p>
-            <!-- <div class="content--shoping__list">
-              <div class="shoping__list__option">
-                <div class="shoping__list--thumbnail">
-                  <img src="images/image-product-1-thumbnail.jpg" alt="product image">
-                </div>
-                <div class="shoping__list--description">
-                  <p class="description__product--name">fall limited edition sneakers</p>
-                  <p class="description__product--cost">$125.00 x 3 <strong>$375.00</strong></p>
-                </div>
-                <div class="shoping__list--delete-icon">
-                  <img src="images/icon-delete.svg" alt="">
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class="content--checkout-button button" style="box-shadow:none;">
-              <p>Checkout</p>
-            </div> -->
           </div>
         </div>
       </div>
@@ -73,31 +57,46 @@
     </div>
   </header>
   <main>
-    <section class="image-slider">
-      <div class="slider__slides">
-        <div class="slide" style="z-index:2;">
-          <img src="images/image-product-1.jpg" alt="image-product-1">
+    <div class="gallery-container">
+      <section class="image-slider">
+        <div class="slider__slides">
+          <div class="slide" style="z-index:2;">
+            <img src="images/image-product-1.jpg" alt="image-product-1">
+          </div>
+          <div class="slide">
+            <img src="images/image-product-2.jpg" alt="image-product-2">
+          </div>
+          <div class="slide">
+            <img src="images/image-product-3.jpg" alt="image-product-3">
+          </div>
+          <div class="slide">
+            <img src="images/image-product-4.jpg" alt="image-product-4">
+          </div>
         </div>
-        <div class="slide">
-          <img src="images/image-product-2.jpg" alt="image-product-2">
+        <div class="buttons-container">
+          <div class="slider__button--previous">
+            <img src="images/icon-previous.svg" alt="previous button">
+          </div>
+          <div class="slider__button--next">
+            <img src="images/icon-next.svg" alt="next button">
+          </div>
         </div>
-        <div class="slide">
-          <img src="images/image-product-3.jpg" alt="image-product-3">
+      </section>
+      <section class="thumbnails-navigation">
+        <div class="thumbnails-navigation__thumbnail">
+          <img src="images/image-product-1-thumbnail.jpg" alt="">
         </div>
-        <div class="slide">
-          <img src="images/image-product-4.jpg" alt="image-product-4">
+        <div class="thumbnails-navigation__thumbnail">
+          <img src="images/image-product-2-thumbnail.jpg" alt="">
         </div>
-      </div>
-      <div class="buttons-container">
-        <div class="slider__button--previous">
-          <img src="images/icon-previous.svg" alt="previous button">
+        <div class="thumbnails-navigation__thumbnail">
+          <img src="images/image-product-3-thumbnail.jpg" alt="">
         </div>
-        <div class="slider__button--next">
-          <img src="images/icon-next.svg" alt="next button">
+        <div class="thumbnails-navigation__thumbnail">
+          <img src="images/image-product-4-thumbnail.jpg" alt="">
         </div>
-      </div>
-    </section>
-    <section class="thumbnails-navigation"></section>
+      </section>
+    </div>
     <section class="product-card">
       <h3 class="product--company"></h3>
       <h2 class="product--name"></h2>

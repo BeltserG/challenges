@@ -333,8 +333,19 @@ table {
   border-radius: 0.3rem;
 }
 
-.old-price {
+.product--price :last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex: 1;
+}
+
+.product--price :first-child {
+  display: flex;
+  align-items: center;
+}
+
+.old-price {
   font-size: 1rem;
   text-align: right;
   color: hsl(220, 14%, 75%);
@@ -345,8 +356,8 @@ table {
 
 .old-price:before {
   content: "";
-  height: 0.75rem;
-  width: 3.9rem;
+  height: 0.3em;
+  width: 3.9em;
   position: absolute;
   border-bottom: 1px solid hsl(220, 14%, 75%);
 }
@@ -359,7 +370,6 @@ table {
   display: flex;
   background-color: hsl(223, 64%, 98%);
   align-items: center;
-  height: 3.5rem;
   border-radius: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -499,16 +509,45 @@ table {
   .thumbnails-navigation {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1.3rem;
   }
   .thumbnails-navigation__thumbnail {
     border-radius: 0.5rem;
     overflow: hidden;
+    border: 3px solid transparent;
+  }
+  .chosen {
     border: 3px solid hsl(26, 100%, 55%);
+    opacity: 0.5;
   }
   .thumbnails-navigation__thumbnail:hover {
     opacity: 0.5;
     cursor: pointer;
+  }
+  .product--company {
+    font-size: 0.6rem;
+  }
+  .product--name {
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+  }
+  .product--info {
+    margin-top: 1.75rem;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+  .product--price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .current-price {
+    font-size: 1.5rem;
+  }
+  .discount {
+    font-size: 0.8rem;
+  }
+  .old-price {
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 1300px) {
@@ -536,5 +575,21 @@ table {
     flex-direction: column;
     padding: 1.5rem;
     box-shadow: 0px 2.5px 6px -9px rgba(0, 0, 0, 0.022), 0px 6px 12.4px -9px rgba(0, 0, 0, 0.025), 0px 10.8px 19.2px -9px rgba(0, 0, 0, 0.026), 0px 17.4px 26.7px -9px rgba(0, 0, 0, 0.03), 0px 25.2px 35.4px -9px rgba(0, 0, 0, 0.043), 0px 30px 51px -9px rgba(0, 0, 0, 0.12);
+  }
+  .product--addingbox {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .addingbox__amount {
+    width: 8rem;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .addingbox__add-button {
+    flex: 1;
+  }
+  .button p {
+    font-size: 0.75rem;
   }
 }/*# sourceMappingURL=styles.css.map */

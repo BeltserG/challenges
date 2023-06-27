@@ -1,3 +1,5 @@
+let inCartAmount = 0;
+
 async function initProductCard() {
     const response = await fetch("products.json");
     const data = await response.json();
@@ -15,7 +17,23 @@ async function initProductCard() {
     discountField.innerHTML = `${(data[0]["old-price"] - data[0].price)/data[0]["old-price"]*100}%`;
     productCardInteraction(data);
 }
+function thumbnailNavInteraction(slides, currentSlide) {
+    const thumbnails = [...document.querySelectorAll(".thumbnails-navigation__thumbnail")];
+    thumbnails.forEach((thumb, thumbIndex)=>{
+        thumb.addEventListener("click", ()=>{
+            thumbnails.forEach((thumb)=>{
+                thumb.classList.remove("chosen");
+                slides.forEach((slide, slideIndex)=>{
+                    slide.style.transform = `translateX(${100*(slideIndex-thumbIndex)}%)`
+                })
+            })
+            currentSlide = thumbIndex;
+            console.log(currentSlide);
+            thumb.classList.add("chosen");
+        })
+    })
 
+}
 function headerInteraction() {
     let hamburger = document.querySelector('.navigation__buttons--burger');
     let cross = document.querySelector('.navigation__buttons--cross');
@@ -71,9 +89,9 @@ function sliderInteraction() {
     const slides = document.querySelectorAll(".slide");
     const prevArrow = document.querySelector(".slider__button--previous");
     const nextArrow = document.querySelector(".slider__button--next");
-
     let currentSlide = 0;
     let carLen = slides.length;
+    thumbnailNavInteraction(slides, currentSlide);
 
     adaptSlides(slides);
 
@@ -130,7 +148,8 @@ function productCardInteraction(data) {
     })
     addToCartButton.addEventListener("click", () =>{
         if (amount > 0) {
-            addToCart(amount, data);
+            amountCart = addToCart(amount, data);
+            inCartAmount += amount;
         }
         
     })
@@ -163,8 +182,8 @@ function addToCart(amount, data) {
     deleteButton.addEventListener('click', () => {
         shopingCart.innerHTML = '<p>Your cart is empty.</p>';
         iconAmount.style.visibility = "hidden";
-        
-    })
+        inCartAmount = 0;
+    })  
 }
 initProductCard();
 headerInteraction();

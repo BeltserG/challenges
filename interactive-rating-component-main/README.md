@@ -39,7 +39,7 @@ Desktop:
 ### Links
 
 - Solution URL: [https://github.com/BeltserG/challenges/tree/master/interactive-rating-component-main](https://github.com/BeltserG/challenges/tree/master/interactive-rating-component-main)
-- Live Site URL: [https://beltserg.github.io/challenges/interactive-rating-component-main/](https://beltserg.github.io/challenges/interactive-rating-component-main/)
+- Live Site URL: [https://beltserg.github.io/challenges/interactive-rating-component-main/](https://beltserg.github.io/challenges/interactive-rating-component-main)
 
 ## My process
 

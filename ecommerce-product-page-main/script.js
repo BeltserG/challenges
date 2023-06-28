@@ -17,8 +17,8 @@ async function initProductCard() {
     discountField.innerHTML = `${(data[0]["old-price"] - data[0].price)/data[0]["old-price"]*100}%`;
     productCardInteraction(data);
 }
-function thumbnailNavInteraction(slides, currentSlide) {
-    const thumbnails = [...document.querySelectorAll(".thumbnails-navigation__thumbnail")];
+function thumbnailNavInteraction(sliderContainer, slides, currentSlide) {
+    const thumbnails = [...sliderContainer.querySelectorAll(".thumbnails-navigation__thumbnail")];
     thumbnails.forEach((thumb, thumbIndex)=>{
         thumb.addEventListener("click", ()=>{
             thumbnails.forEach((thumb)=>{
@@ -28,11 +28,13 @@ function thumbnailNavInteraction(slides, currentSlide) {
                 })
             })
             currentSlide = thumbIndex;
-            console.log(currentSlide);
             thumb.classList.add("chosen");
         })
     })
-
+    thumbnails.forEach((thumb)=>{
+        thumb.classList.remove("chosen");
+    })
+    thumbnails[currentSlide].classList.add("chosen");
 }
 function headerInteraction() {
     let hamburger = document.querySelector('.navigation__buttons--burger');
@@ -40,8 +42,9 @@ function headerInteraction() {
     let navBar = document.querySelector('.navigation__buttons');
     let navListContainer = document.querySelector('.navigation__menu');
     let lightbox = document.querySelector("#lightbox");
+    let cartIcon = document.querySelector("#cart-icon");
+    let cartDropdown = document.querySelector(".cart__dropdown");
     
-
     navBar.addEventListener('click', () => {
         if (hamburger.getAttribute("aria-expanded") === "false") {
             hamburger.style.visibility = "hidden";
@@ -66,8 +69,6 @@ function headerInteraction() {
         lightbox.style.display = "none";
     })
 
-    let cartIcon = document.querySelector("#cart-icon");
-    let cartDropdown = document.querySelector(".cart__dropdown");
     cartIcon.addEventListener("click", () =>{
         if (cartDropdown.getAttribute("aria-expanded") === "true") {
             cartIcon.style.filter = "";
@@ -86,44 +87,48 @@ function headerInteraction() {
 }
 
 function sliderInteraction() {
-    const slides = document.querySelectorAll(".slide");
-    const prevArrow = document.querySelector(".slider__button--previous");
-    const nextArrow = document.querySelector(".slider__button--next");
-    let currentSlide = 0;
-    let carLen = slides.length;
-    thumbnailNavInteraction(slides, currentSlide);
-
-    adaptSlides(slides);
-
-    function changeSlide (clicked) {
-        slides.forEach((slide, index) => {
-            slide.style.transform = `translateX(${100*(index - clicked)}%)`;
-        });
-        currentSlide = clicked;
-    }
-
-    function adaptSlides(slides) {
-        for (let i = 0; i < carLen; i++) {
-            slides[i].style.transform = `translateX(${i * 100}%`;
+    const sliderContainers = document.querySelectorAll(".gallery-container");
+    sliderContainers.forEach(sliderContainer =>{
+        const prevArrow = sliderContainer.querySelector(".slider__button--previous");
+        const nextArrow = sliderContainer.querySelector(".slider__button--next");
+        const slides = sliderContainer.querySelectorAll(".slide");
+        let currentSlide = 0;
+        let carLen = slides.length;
+        thumbnailNavInteraction(sliderContainer, slides, currentSlide);
+        adaptSlides(slides);
+        function adaptSlides(slides) {
+            for (let i = 0; i < carLen; i++) {
+                slides[i].style.transform = `translateX(${i * 100}%`;
+            }
         }
-    }
-
-    prevArrow.addEventListener('click', () => {
-        if (currentSlide > 0){
-            currentSlide--;
+        function changeSlide (clicked) {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(${100*(index - clicked)}%)`;
+            });
+            currentSlide = clicked;
         }
-        if (currentSlide >= 0){
+    
+    
+    
+        prevArrow.addEventListener('click', () => {
+            if (currentSlide > 0){
+                currentSlide--;
+                thumbnailNavInteraction(sliderContainer, slides, currentSlide);
+            }
+            if (currentSlide >= 0){
+                changeSlide(currentSlide);
+                thumbnailNavInteraction(sliderContainer, slides, currentSlide);
+            }
+        })
+        nextArrow.addEventListener('click', () => {
+            currentSlide++;
+            if (currentSlide >= carLen){
+                currentSlide = 0;  
+            }
             changeSlide(currentSlide);
-        }
-    })
-    nextArrow.addEventListener('click', () => {
-        currentSlide++;
-        console.log(currentSlide);
-        if (currentSlide >= carLen){
-            currentSlide = 0;  
-        }
-        changeSlide(currentSlide);
-        
+            thumbnailNavInteraction(sliderContainer, slides, currentSlide);
+            
+        })
     })
 }
 
@@ -148,8 +153,8 @@ function productCardInteraction(data) {
     })
     addToCartButton.addEventListener("click", () =>{
         if (amount > 0) {
-            amountCart = addToCart(amount, data);
             inCartAmount += amount;
+            addToCart(inCartAmount, data);
         }
         
     })
@@ -185,6 +190,27 @@ function addToCart(amount, data) {
         inCartAmount = 0;
     })  
 }
+function lightboxInteraction () {
+    const galleryMain = document.querySelector("#main-gallery");
+    const galleryLightbox = document.querySelector(".lightbox-view");
+    const arrows = galleryLightbox.querySelector(".buttons-container");
+    const lightbox = document.querySelector("#lightbox");
+    const crossIcon = document.querySelector("#lightbox-gallery__cross-icon img");
+    console.log(crossIcon);
+    galleryMain.querySelector(".slider__slides").addEventListener("click", () =>{
+        lightbox.style.display = "block";
+        galleryLightbox.style.display = "flex";
+        arrows.style.display = "flex";
+    })
+    lightbox.addEventListener("click", () =>{
+        galleryLightbox.style.display = "none";
+    })
+    crossIcon.addEventListener("click", () =>{
+        galleryLightbox.style.display = "none";
+        lightbox.style.display = "none";
+    })
+}
 initProductCard();
 headerInteraction();
 sliderInteraction();
+lightboxInteraction();

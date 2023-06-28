@@ -30,15 +30,12 @@ Users should be able to:
 
 Mobile:  
 ![](./screenshots/mobile.png)
-&nbsp;
 
 Mobile NavBar: 
 ![](./screenshots/mobileNavBar.png)
-&nbsp;
 
 Desktop:  
 ![](./screenshots/desktop.png)
-&nbsp;
 
 Cart Interaction:
 ![](./screenshots/interaction.png)

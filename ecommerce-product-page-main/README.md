@@ -31,7 +31,7 @@ Users should be able to:
 Mobile:  
 ![](./screenshots/mobile.png)
 
-Mobile NavBar: 
+Mobile NavBar:  
 ![](./screenshots/mobileNavBar.png)
 
 Desktop:  

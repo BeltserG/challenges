@@ -196,11 +196,13 @@ function lightboxInteraction () {
     const arrows = galleryLightbox.querySelector(".buttons-container");
     const lightbox = document.querySelector("#lightbox");
     const crossIcon = document.querySelector("#lightbox-gallery__cross-icon img");
-    console.log(crossIcon);
+    let width = window.innerWidth;
     galleryMain.querySelector(".slider__slides").addEventListener("click", () =>{
-        lightbox.style.display = "block";
-        galleryLightbox.style.display = "flex";
-        arrows.style.display = "flex";
+        if (width > 700){
+            lightbox.style.display = "block";
+            galleryLightbox.style.display = "flex";
+            arrows.style.display = "flex";
+        }
     })
     lightbox.addEventListener("click", () =>{
         galleryLightbox.style.display = "none";

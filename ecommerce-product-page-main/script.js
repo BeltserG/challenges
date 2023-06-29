@@ -19,17 +19,33 @@ async function initProductCard() {
 }
 function thumbnailNavInteraction(sliderContainer, slides, currentSlide) {
     const thumbnails = [...sliderContainer.querySelectorAll(".thumbnails-navigation__thumbnail")];
-    thumbnails.forEach((thumb, thumbIndex)=>{
-        thumb.addEventListener("click", ()=>{
+    const slidesArray = [...slides];
+    // thumbnails.forEach((thumb, thumbIndex)=>{
+    //     thumb.addEventListener("click", ()=>{
+    //         thumbnails.forEach((thumb)=>{
+    //             thumb.classList.remove("chosen");
+                // slides.forEach((slide, slideIndex)=>{
+                //     slide.style.transform = `translateX(${100*(slideIndex-thumbIndex)}%)`
+                // })
+    //         })
+    //         currentSlide = thumbIndex;
+    //         thumb.classList.add("chosen");
+    //     })
+    // })
+    sliderContainer.querySelector(".thumbnails-navigation").addEventListener("click", (e)=>{
+        const {target} = e;
+        const thumbClicked = target.closest(".thumbnails-navigation__thumbnail");
+        const thumbClickedIndex = thumbnails.indexOf(thumbClicked);
+        if (thumbClicked){
             thumbnails.forEach((thumb)=>{
                 thumb.classList.remove("chosen");
                 slides.forEach((slide, slideIndex)=>{
-                    slide.style.transform = `translateX(${100*(slideIndex-thumbIndex)}%)`
+                    slide.style.transform = `translateX(${100*(slideIndex-thumbClickedIndex)}%)`
                 })
             })
-            currentSlide = thumbIndex;
-            thumb.classList.add("chosen");
-        })
+            currentSlide = thumbnails.indexOf(thumbClicked);
+            thumbClicked.classList.add("chosen");
+        }
     })
     thumbnails.forEach((thumb)=>{
         thumb.classList.remove("chosen");

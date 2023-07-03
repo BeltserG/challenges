@@ -19,6 +19,18 @@ body {
   --lime-cyan-background: linear-gradient(to right, $limeGreen, $brightCyan);
 }
 
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(hsl(233, 26%, 24%), hsla(233, 26%, 24%, 0.5));
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.5;
+  visibility: hidden;
+  transition: 250ms;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -38,6 +50,7 @@ table {
   width: 100%;
   top: 0;
   background-color: hsl(0, 0%, 100%);
+  z-index: 100;
 }
 
 .header__navigation {
@@ -49,7 +62,9 @@ table {
   position: absolute;
   padding: var(--header-padding);
   border-radius: 0.5rem;
-  display: none;
+  opacity: 0;
+  transition: 250ms;
+  visibility: hidden;
 }
 
 .navigation__menu {
@@ -69,6 +84,10 @@ table {
   text-align: center;
   padding: calc(var(--header-padding) / 2);
   border-bottom: 3px solid transparent;
+}
+
+.menu--option:hover {
+  font-weight: 700;
 }
 
 .menu--option::after {
@@ -93,10 +112,22 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 24px;
+  height: 20px;
+}
+
+.header__mobile-buttons:hover {
+  cursor: pointer;
 }
 
 .mobile-buttons--burger {
+  z-index: 99;
+}
+
+.mobile-buttons--cross {
+  opacity: 0;
   position: absolute;
+  z-index: 99;
 }
 
 .hero {
@@ -135,6 +166,11 @@ table {
   border: 0;
 }
 
+.button:hover {
+  cursor: pointer;
+  filter: brightness(115%);
+}
+
 .hero__media {
   background-image: url(images/bg-intro-mobile.svg);
   background-repeat: no-repeat;
@@ -171,6 +207,11 @@ table {
   font-weight: 400;
   font-size: 1.75rem;
   color: hsl(233, 26%, 24%);
+}
+
+.article--headline:hover {
+  color: hsl(192, 70%, 51%);
+  cursor: pointer;
 }
 
 .benefits__header--text {
@@ -280,6 +321,11 @@ table {
   width: 1.25rem;
 }
 
+.footer__social-links img:hover {
+  filter: invert(65%) sepia(97%) saturate(1171%) hue-rotate(154deg) brightness(91%) contrast(87%);
+  cursor: pointer;
+}
+
 .footer__navigation__menu {
   list-style: none;
   margin: 0;
@@ -289,6 +335,11 @@ table {
   gap: 1rem;
   font-size: 0.8rem;
   color: hsl(220, 14%, 96%);
+}
+
+.footer__menu--option:hover {
+  color: hsl(192, 70%, 51%);
+  cursor: pointer;
 }
 
 .footer__copyright {

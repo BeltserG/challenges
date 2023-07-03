@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="lightbox"></div>
   <header class="header">
     <div class="header__logo">
       <img src="images/logo.svg" alt="">
     </div>
-    <nav class="header__navigation">
+    <nav class="header__navigation" aria-expanded="false"> 
       <ul class="navigation__menu">
         <li class="menu--option">Home</li>
         <li class="menu--option">About</li>
@@ -23,10 +24,10 @@
     </nav>
     <div class="header__mobile-buttons">
       <div class="mobile-buttons--burger">
-        <img src="images/icon-close.svg" alt="">
+        <img src="images/icon-hamburger.svg" alt="">
       </div>
       <div class="mobile-buttons--cross">
-        <img src="images/icon-hamburger.svg" alt=""></div>
+        <img src="images/icon-close.svg" alt=""></div>
     </div>
     <!-- <div class="header__request-button button"></div> -->
   </header>

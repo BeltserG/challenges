@@ -40,8 +40,8 @@ Cart Interaction:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master](https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master)
+- Live Site URL: [https://beltserg.github.io/challenges/easybank-landing-page-master/](https://beltserg.github.io/challenges/easybank-landing-page-master)
 
 ## My process
 
@@ -54,5 +54,6 @@ Cart Interaction:
 
 ## Author
 
-- Solution URL: [https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master](https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master)
-- Live Site URL: [https://beltserg.github.io/challenges/easybank-landing-page-master/](https://beltserg.github.io/challenges/easybank-landing-page-master)
+- GitHub - [BeltserG](https://github.com/BeltserG)
+- Frontend Mentor - [BeltserG](https://www.frontendmentor.io/profile/BeltserG)
+- Email - beltsergeorgy@gmail.com

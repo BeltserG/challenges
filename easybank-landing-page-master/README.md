@@ -54,5 +54,5 @@ Cart Interaction:
 
 ## Author
 
-- Solution URL: [https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-main](https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-main)
-- Live Site URL: [https://beltserg.github.io/challenges/easybank-landing-page-main/](https://beltserg.github.io/challenges/easybank-landing-page-main)
+- Solution URL: [https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master](https://github.com/BeltserG/challenges/tree/master/easybank-landing-page-master)
+- Live Site URL: [https://beltserg.github.io/challenges/easybank-landing-page-master/](https://beltserg.github.io/challenges/easybank-landing-page-master)

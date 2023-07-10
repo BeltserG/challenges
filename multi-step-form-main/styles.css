@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html, body, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.card {
+  --card-padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(217, 100%, 97%);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.paging {
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  height: 172px;
+  padding: 2rem;
+}
+
+.paging__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list__option {
+  background-color: transparent;
+}
+
+.list__option--button {
+  --circle-button-diameter: 2.1rem;
+  width: var(--circle-button-diameter);
+  height: var(--circle-button-diameter);
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+  outline: 0;
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.list__option--button:hover {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(206, 94%, 87%);
+  border-color: hsl(206, 94%, 87%);
+}
+
+.list__option--header {
+  display: none;
+}
+
+.list__option--text {
+  display: none;
+}
+
+.forms {
+  background-color: hsl(0, 0%, 100%);
+  width: calc(100% - var(--card-padding) * 2);
+  align-self: center;
+  border-radius: 1rem;
+  padding: calc(var(--card-padding) * 2);
+  position: absolute;
+  top: 6.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.form-header {
+  font-size: 1.6rem;
+}
+
+.form-info {
+  line-height: 1.5rem;
+  color: hsl(231, 11%, 63%);
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.field--label {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.field--input {
+  border: 1px hsl(229, 24%, 87%) solid;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+}
+
+.field--input::-moz-placeholder {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.field--input::placeholder {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  background-color: hsl(0, 0%, 100%);
+}
+
+.step-buttons--back {
+  background: transparent;
+  border: 0;
+  font-weight: 500;
+  color: hsl(231, 11%, 63%);
+  font-size: 0.9rem;
+}
+
+.step-buttons--next {
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(217, 100%, 97%);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}/*# sourceMappingURL=styles.css.map */

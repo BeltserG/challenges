@@ -90,7 +90,7 @@ table {
   border-radius: 1rem;
   padding: calc(var(--card-padding) * 2);
   position: absolute;
-  top: 6.5rem;
+  top: 6rem;
 }
 
 .form {
@@ -141,6 +141,123 @@ table {
 .field--input::placeholder {
   color: hsl(231, 11%, 63%);
   font-weight: 500;
+}
+
+.form-fields__option {
+  border: 1px hsl(229, 24%, 87%) solid;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--card-padding);
+}
+
+.form-fields__option:has(input:checked) {
+  border: 1px solid hsl(213, 96%, 18%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.form-fields__option-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.option--name {
+  font-size: 0.95rem;
+  color: hsl(213, 96%, 18%);
+}
+
+.option--text {
+  color: hsl(231, 11%, 63%);
+  font-size: 500;
+  font-size: 0.8rem;
+}
+
+.checkbox-wrapper {
+  --checkbox-width: 1.4rem;
+  width: var(--checkbox-width);
+  height: var(--checkbox-width);
+  position: relative;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.checkbox {
+  opacity: 0;
+  width: inherit;
+  height: inherit;
+  margin: 0;
+}
+
+.checkmark {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 12px;
+  top: 10%;
+  left: 30%;
+  background-color: transparent;
+  transform: rotate(45deg);
+  border: solid hsl(0, 0%, 100%);
+  border-width: 0 2px 2px 0;
+}
+
+.checkbox-wrapper input:checked + .checkmark {
+  background-color: hsl(243, 100%, 62%);
+  border: 1px solid hsl(243, 100%, 62%);
+}
+
+.textbox {
+  font-size: 2rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-transform: capitalize;
+  background-color: hsla(217, 100%, 97%, 0.75);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+#monthly {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.95rem;
+}
+
+#yearly {
+  color: hsl(231, 11%, 63%);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.toggle--button {
+  background-color: hsl(213, 96%, 18%);
+  border: 0;
+  outline: 0;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  width: 2.5rem;
+}
+
+.button-circle {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
 }
 
 .step-buttons {

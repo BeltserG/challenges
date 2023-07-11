@@ -55,66 +55,83 @@
             <div class="form-fields">
               <div class="form-fields__option">
                 <img src="./assets/images/icon-arcade.svg" alt="" class="option--logo">
-                <h3 class="option--name">Arcade</h3>
-                <p class="option--text">
-                  <span class="option--text--cost">1</span>
-                  <span class="option--text--bonus">disc</span>
-                </p>
+                <div class="form-fields__option-wrapper">
+                  <h3 class="option--name">Arcade</h3>
+                  <p class="option--text">
+                    <span class="option--text--cost">1</span>
+                    <span class="option--text--bonus">disc</span>
+                  </p>
+                </div>
               </div>
               <div class="form-fields__option">
                 <img src="./assets/images/icon-advanced.svg" alt="" class="option--logo">
-                <h3 class="option--name">Advanced</h3>
-                <p class="option--text">
-                  <span class="option--text--cost">1</span>
-                  <span class="option--text--bonus">disc</span>
-                </p>
+                <div class="form-fields__option-wrapper">
+                  <h3 class="option--name">Advanced</h3>
+                  <p class="option--text">
+                    <span class="option--text--cost">1</span>
+                    <span class="option--text--bonus">disc</span>
+                  </p>
+                </div>
               </div>
               <div class="form-fields__option">
                 <img src="./assets/images/icon-pro.svg" alt="" class="option--logo">
-                <h3 class="option--name">Pro</h3>
-                <p class="option--text">
-                  <span class="option--text--cost">1</span>
-                  <span class="option--text--bonus">disc</span>
-                </p>
+                <div class="form-fields__option-wrapper">
+                  <h3 class="option--name">Pro</h3>
+                  <p class="option--text">
+                    <span class="option--text--cost">1</span>
+                    <span class="option--text--bonus">disc</span>
+                  </p>
+                </div>
               </div>
             </div>
             <div class="toggle">
               <h3 class="toggle--option" id="monthly">monthly</h3>
-              <button class="toggle--button"></button>
+              <button class="toggle--button">
+                <div class="button-circle"></div>
+              </button>
               <h3 class="toggle--option" id="yearly">yearly</h3>
             </div>
           </div>
           <div class="form" data-page="3">
             <h2 class="form-header">Pick add-ons</h2>
             <p class="form-info">Add-ons help enhance your gaming experience</p>
-            <form class="forms" action="./index.html">
-              <div class="forn-fields__option">
+            <form class="form-fields" action="./index.html">
+              <div class="form-fields__option">
+                <label class="checkbox-wrapper">
+                  <input class="checkbox" type="checkbox" name="online-service" id="online-service">
+                  <span class="checkmark"></span>
+                </label>
                 <label for="online-service">
-                  <h3 class="option--name">online servicecustomizable-profile</h3>
+                  <h3 class="option--name">Online service</h3>
                   <p class="option--text">Access to multiplayer games</p>
                 </label>
-                <input type="checkbox" name="online-service" id="online-service">
               </div>
-              <div class="forn-fields__option">
+              <div class="form-fields__option">
+                <label class="checkbox-wrapper">
+                  <input class="checkbox" type="checkbox" name="larger-storage" id="larger-storage">
+                  <span class="checkmark"></span>
+                </label>
                 <label for="larger-storage">
-                  <h3 class="option--name">larger storage</h3>
+                  <h3 class="option--name">Larger storage</h3>
                   <p class="option--text">Extra 1TB of cloud save</p>
                 </label>
-                <input type="checkbox" name="larger-storage" id="larger-storage">
               </div>
-              <div class="forn-fields__option">
+              <div class="form-fields__option">
+                <label class="checkbox-wrapper">
+                  <input class="checkbox" type="checkbox" name="customizable-profile" id="customizable-profile">
+                  <span class="checkmark"></span>
+                </label>
                 <label for="customizable-profile">
-                  <h3 class="option--name">customizable profile</h3>
+                  <h3 class="option--name">Customizable profile</h3>
                   <p class="option--text">Custom theme on your phone</p>
                 </label>
-                <input type="checkbox" name="customizable-profile" id="customizable-profile">
               </div>
             </form>
           </div>
           <div class="form" data-page="4">
-            <h2 class="form-header">finishing up</h2>
+            <h2 class="form-header">Finishing up</h2>
             <p class="form-info">Double-check everything looks OK before confirming.</p>
-            <div class="forms">
+            <div class="form-fields">
               <div class="forms__cashout-position">
                 <h3 class="cashout-position--header">Arcade(Monthly)
                   <span class="cashout-position--change">Change</span>

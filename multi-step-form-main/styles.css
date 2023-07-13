@@ -41,6 +41,7 @@ table {
 
 .paging {
   background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-size: cover;
   height: 172px;
   padding: 2rem;
 }
@@ -77,10 +78,19 @@ table {
 
 .list__option--header {
   display: none;
+  text-transform: uppercase;
+  color: hsl(231, 11%, 63%);
+  font-weight: 400;
+  font-size: 0.7rem;
 }
 
 .list__option--text {
   display: none;
+  color: hsl(231, 100%, 99%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
 }
 
 .forms {
@@ -351,4 +361,56 @@ table {
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
   margin-left: auto;
+}
+
+@media (min-width: 525px) {
+  .multiform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(217, 100%, 97%);
+    height: 100vh;
+  }
+  .card {
+    flex-direction: row;
+    background-color: hsl(0, 0%, 100%);
+    max-width: 1200px;
+    width: calc(100% - 2rem);
+    padding: var(--card-padding);
+    border-radius: 0.5rem;
+    height: auto;
+  }
+  .paging {
+    background-image: url(./assets/images/bg-sidebar-desktop.svg);
+    height: auto;
+    background-position: center center;
+    border-radius: 0.5rem;
+    min-width: 15rem;
+  }
+  .paging__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .steps-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .list__option {
+    display: flex;
+    gap: 1rem;
+  }
+  .list__option--header {
+    display: block;
+  }
+  .list__option--text {
+    display: block;
+  }
+  .forms {
+    position: static;
+    width: auto;
+  }
+  .form[data-page="5"] {
+    padding: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */

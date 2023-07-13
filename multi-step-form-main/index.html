@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Multi-step form</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="./build/build.js" defer></script>
+  <script src="./build/build.js" type="module" defer></script>
 </head>
 <body>
   <main>
@@ -15,24 +15,32 @@
         <nav class="paging">
           <ul class="paging__list">
             <li class="list__option">
-              <button class="list__option--button">1</button>
-              <h4 class="list__option--header">step 1</h4>
-              <p class="list__option--text">your info</p>
+              <button class="list__option--button" data-page="1">1</button>
+              <div class="steps-wrapper">
+                <h4 class="list__option--header">step 1</h4>
+                <p class="list__option--text">your info</p>
+              </div>
             </li>
-            <li class="list--option">
-              <button class="list__option--button">2</button>
-              <h4 class="list__option--header">step 2</h4>
-              <p class="list__option--text">select plan</p>
+            <li class="list__option">
+              <button class="list__option--button" data-page="2">2</button>
+              <div class="steps-wrapper">
+                <h4 class="list__option--header">step 2</h4>
+                <p class="list__option--text">select plan</p>
+              </div>
             </li>
-            <li class="list--option">
-              <button class="list__option--button">3</button>
-              <h4 class="list__option--header">step 3</h4>
-              <p class="list__option--text">add-ons</p>
+            <li class="list__option">
+              <button class="list__option--button" data-page="3">3</button>
+              <div class="steps-wrapper">
+                <h4 class="list__option--header">step 3</h4>
+                <p class="list__option--text">add-ons</p>
+              </div>
             </li>
-            <li class="list--option">
-              <button class="list__option--button">4</button>
-              <h4 class="list__option--header">step</h4>
-              <p class="list__option--text">summary</p>
+            <li class="list__option">
+              <button class="list__option--button" data-page="4">4</button>
+              <div class="steps-wrapper">
+                <h4 class="list__option--header"> step 4</h4>
+                <p class="list__option--text">summary</p>
+              </div>
             </li>
           </ul>
         </nav>

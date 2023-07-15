@@ -44,136 +44,152 @@
             </li>
           </ul>
         </nav>
-        <div class="forms">
-          <div class="form" data-page="1">
-            <h2 class="form-header">Personal info</h2>
-            <p class="form-info">Please, provide your name, email address and phone number</p>
-            <form action="./index.html" class="form-fields">
-              <div class="field"><label for="name" class="field--label">name</label><input type="text" class="field--input" id="name" name="name" placeholder="e.g. Stephen King">
-              </div>
-              <div class="field"><label for="email-address" class="field--label">email address</label><input type="text" class="field--input" id="email-address" name="email-address" placeholder="e.g. stephenking@lorem.com">
-              </div>
-              <div class="field"><label for="phone-number" class="field--label">phone number</label><input type="text" class="field--input" id="phone-number" name="phone-number" placeholder="e.g. +1 234 567 890">
-              </div>
-            </form>
-          </div>
-          <div class="form" data-page="2">
-            <h2 class="form-header">Select your plan</h2>
-            <p class="form-info">You have the option of monthly or yearly billing.</p>
-            <div class="form-fields">
-              <div class="form-fields__option">
-                <img src="./assets/images/icon-arcade.svg" alt="" class="option--logo">
-                <div class="form-fields__option-wrapper">
-                  <h3 class="option--name">Arcade</h3>
-                  <p class="option--text">
-                    <span class="option--text--cost">1</span>
-                    <span class="option--text--bonus">disc</span>
-                  </p>
+        <div class="formsbuttons-wrapper">
+          <div class="forms">
+            <div class="form" data-page="1">
+              <h2 class="form-header">Personal info</h2>
+              <p class="form-info">Please, provide your name, email address and phone number</p>
+              <form action="./index.html" class="form-fields">
+                <div class="field">
+                  <div class="label-wrapper">
+                    <label for="name" class="field--label">name</label>
+                    <span class="input-error"></span>
+                  </div>
+                  <input type="text" class="field--input" id="name" name="name" placeholder="e.g. Stephen King">
+                </div>
+                <div class="field">
+                  <div class="label-wrapper">
+                    <label for="email-address" class="field--label">email address</label>
+                    <span class="input-error"></span>
+                  </div>
+                  <input type="text" class="field--input" id="email-address" name="email-address" placeholder="e.g. stephenking@lorem.com">
+                </div>
+                <div class="field">
+                  <div class="label-wrapper">
+                    <label for="phone-number" class="field--label">phone number</label>
+                    <span class="input-error"></span>
+                  </div>
+                  <input type="text" class="field--input" id="phone-number" name="phone-number" placeholder="e.g. +1 234 567 890">
+                </div>
+              </form>
+            </div>
+            <div class="form" data-page="2">
+              <h2 class="form-header">Select your plan</h2>
+              <p class="form-info">You have the option of monthly or yearly billing.</p>
+              <div class="form-fields">
+                <div class="form-fields__option">
+                  <img src="./assets/images/icon-arcade.svg" alt="" class="option--logo">
+                  <div class="form-fields__option-wrapper">
+                    <h3 class="option--name">Arcade</h3>
+                    <p class="option--text">
+                      <span class="option--text--cost">1</span>
+                      <span class="option--text--bonus">disc</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="form-fields__option">
+                  <img src="./assets/images/icon-advanced.svg" alt="" class="option--logo">
+                  <div class="form-fields__option-wrapper">
+                    <h3 class="option--name">Advanced</h3>
+                    <p class="option--text">
+                      <span class="option--text--cost">1</span>
+                      <span class="option--text--bonus">disc</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="form-fields__option">
+                  <img src="./assets/images/icon-pro.svg" alt="" class="option--logo">
+                  <div class="form-fields__option-wrapper">
+                    <h3 class="option--name">Pro</h3>
+                    <p class="option--text">
+                      <span class="option--text--cost">1</span>
+                      <span class="option--text--bonus">disc</span>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="form-fields__option">
-                <img src="./assets/images/icon-advanced.svg" alt="" class="option--logo">
-                <div class="form-fields__option-wrapper">
-                  <h3 class="option--name">Advanced</h3>
-                  <p class="option--text">
-                    <span class="option--text--cost">1</span>
-                    <span class="option--text--bonus">disc</span>
-                  </p>
+              <div class="toggle">
+                <h3 class="toggle--option" id="monthly">monthly</h3>
+                <button class="toggle--button">
+                  <div class="button-circle"></div>
+                </button>
+                <h3 class="toggle--option" id="yearly">yearly</h3>
+              </div>
+            </div>
+            <div class="form" data-page="3">
+              <h2 class="form-header">Pick add-ons</h2>
+              <p class="form-info">Add-ons help enhance your gaming experience</p>
+              <form class="form-fields" action="./index.html">
+                <div class="form-fields__option">
+                  <label class="checkbox-wrapper">
+                    <input class="checkbox" type="checkbox" name="online-service" id="online-service">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label for="online-service">
+                    <h3 class="option--name">Online service</h3>
+                    <p class="option--text">Access to multiplayer games</p>
+                  </label>
+                </div>
+                <div class="form-fields__option">
+                  <label class="checkbox-wrapper">
+                    <input class="checkbox" type="checkbox" name="larger-storage" id="larger-storage">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label for="larger-storage">
+                    <h3 class="option--name">Larger storage</h3>
+                    <p class="option--text">Extra 1TB of cloud save</p>
+                  </label>
+                </div>
+                <div class="form-fields__option">
+                  <label class="checkbox-wrapper">
+                    <input class="checkbox" type="checkbox" name="customizable-profile" id="customizable-profile">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label for="customizable-profile">
+                    <h3 class="option--name">Customizable profile</h3>
+                    <p class="option--text">Custom theme on your phone</p>
+                  </label>
+                </div>
+              </form>
+            </div>
+            <div class="form" data-page="4">
+              <h2 class="form-header">Finishing up</h2>
+              <p class="form-info">Double-check everything looks OK before confirming.</p>
+              <div class="form-fields forms__cashout-wrapper">
+                <div class="forms__cashout-position">
+                  <h3 class="cashout-position--header">Arcade (Monthly)
+                    <span class="cashout-position--change">Change</span>
+                  </h3>
+                  <p class="cashout-position--text">$9/mo</p>
+                </div>
+                <div class="forms__cashout-position">
+                  <h3 class="cashout-position--header">Online service</h3>
+                  <p class="cashout-position--text">$9/mo</p>
+                </div>
+                <div class="forms__cashout-position">
+                  <h3 class="cashout-position--header">Larger storage</h3>
+                  <p class="cashout-position--text">$9/mo</p>
                 </div>
               </div>
-              <div class="form-fields__option">
-                <img src="./assets/images/icon-pro.svg" alt="" class="option--logo">
-                <div class="form-fields__option-wrapper">
-                  <h3 class="option--name">Pro</h3>
-                  <p class="option--text">
-                    <span class="option--text--cost">1</span>
-                    <span class="option--text--bonus">disc</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="toggle">
-              <h3 class="toggle--option" id="monthly">monthly</h3>
-              <button class="toggle--button">
-                <div class="button-circle"></div>
-              </button>
-              <h3 class="toggle--option" id="yearly">yearly</h3>
-            </div>
-          </div>
-          <div class="form" data-page="3">
-            <h2 class="form-header">Pick add-ons</h2>
-            <p class="form-info">Add-ons help enhance your gaming experience</p>
-            <form class="form-fields" action="./index.html">
-              <div class="form-fields__option">
-                <label class="checkbox-wrapper">
-                  <input class="checkbox" type="checkbox" name="online-service" id="online-service">
-                  <span class="checkmark"></span>
-                </label>
-                <label for="online-service">
-                  <h3 class="option--name">Online service</h3>
-                  <p class="option--text">Access to multiplayer games</p>
-                </label>
-              </div>
-              <div class="form-fields__option">
-                <label class="checkbox-wrapper">
-                  <input class="checkbox" type="checkbox" name="larger-storage" id="larger-storage">
-                  <span class="checkmark"></span>
-                </label>
-                <label for="larger-storage">
-                  <h3 class="option--name">Larger storage</h3>
-                  <p class="option--text">Extra 1TB of cloud save</p>
-                </label>
-              </div>
-              <div class="form-fields__option">
-                <label class="checkbox-wrapper">
-                  <input class="checkbox" type="checkbox" name="customizable-profile" id="customizable-profile">
-                  <span class="checkmark"></span>
-                </label>
-                <label for="customizable-profile">
-                  <h3 class="option--name">Customizable profile</h3>
-                  <p class="option--text">Custom theme on your phone</p>
-                </label>
-              </div>
-            </form>
-          </div>
-          <div class="form" data-page="4">
-            <h2 class="form-header">Finishing up</h2>
-            <p class="form-info">Double-check everything looks OK before confirming.</p>
-            <div class="form-fields forms__cashout-wrapper">
-              <div class="forms__cashout-position">
-                <h3 class="cashout-position--header">Arcade (Monthly)
-                  <span class="cashout-position--change">Change</span>
-                </h3>
+              <div class="forms__cashout-position total">
+                <h3 class="cashout-position--header">Total (per year)</h3>
                 <p class="cashout-position--text">$9/mo</p>
               </div>
-              <div class="forms__cashout-position">
-                <h3 class="cashout-position--header">Online service</h3>
-                <p class="cashout-position--text">$9/mo</p>
-              </div>
-              <div class="forms__cashout-position">
-                <h3 class="cashout-position--header">Larger storage</h3>
-                <p class="cashout-position--text">$9/mo</p>
-              </div>
-
             </div>
-            <div class="forms__cashout-position total">
-              <h3 class="cashout-position--header">Total (per year)</h3>
-              <p class="cashout-position--text">$9/mo</p>
+            <div class="form" data-page="5">
+              <img src="./assets/images/icon-thank-you.svg" alt="" class="final-logo">
+              <h2 class="form-header">Thank you!</h2>
+              <p class="form-info">
+                Thanks for confirming your subscription! We hope you have fun
+                using our platform. If you ever need support, please feel free
+                to email us at support@loremgaming.com.
+              </p>
             </div>
           </div>
-          <div class="form" data-page="5">
-            <img src="./assets/images/icon-thank-you.svg" alt="" class="final-logo">
-            <h2 class="form-header">Thank you!</h2>
-            <p class="form-info">
-              Thanks for confirming your subscription! We hope you have fun 
-              using our platform. If you ever need support, please feel free 
-              to email us at support@loremgaming.com.
-            </p>
+          <div class="step-buttons">
+            <button class="step-buttons--back">Go Back</button>
+            <button class="step-buttons--next">Next Step</button>
           </div>
-        </div>
-        <div class="step-buttons">
-          <button class="step-buttons--back">Go Back</button>
-          <button class="step-buttons--next">Next Step</button>
         </div>
       </div>
     </section>

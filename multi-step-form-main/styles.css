@@ -76,6 +76,12 @@ table {
   border-color: hsl(206, 94%, 87%);
 }
 
+.option--button--active {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(206, 94%, 87%);
+  border-color: hsl(206, 94%, 87%);
+}
+
 .list__option--header {
   display: none;
   text-transform: uppercase;
@@ -91,6 +97,11 @@ table {
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.1rem;
+}
+
+.formsbuttons-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .forms {
@@ -131,6 +142,11 @@ table {
   gap: 0.3rem;
 }
 
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .field--label {
   text-transform: capitalize;
   font-size: 0.8rem;
@@ -138,10 +154,27 @@ table {
   font-weight: 500;
 }
 
+.input-error {
+  color: hsl(354, 84%, 57%);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .field--input {
   border: 1px hsl(229, 24%, 87%) solid;
+  border-radius: 0.5rem;
   padding: 0.65rem 1rem;
   font-size: 1rem;
+  max-width: 16rem;
+  outline: 0;
+}
+
+.input-active {
+  border: 1px solid hsl(213, 96%, 18%);
+}
+
+.input-empty {
+  border: 1px solid hsl(354, 84%, 57%);
 }
 
 .field--input::-moz-placeholder {
@@ -340,7 +373,7 @@ table {
 .step-buttons {
   display: flex;
   align-items: center;
-  padding: var(--card-padding);
+  padding: calc(var(--card-padding) * 1.5);
   background-color: hsl(0, 0%, 100%);
 }
 
@@ -363,7 +396,14 @@ table {
   margin-left: auto;
 }
 
-@media (min-width: 525px) {
+.field--label:hover,
+.field--input:hover,
+.step-buttons--back:hover,
+.step-buttons--next:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
   .multiform {
     display: flex;
     align-items: center;
@@ -373,8 +413,9 @@ table {
   }
   .card {
     flex-direction: row;
+    justify-content: flex-start;
     background-color: hsl(0, 0%, 100%);
-    max-width: 1200px;
+    max-width: 59rem;
     width: calc(100% - 2rem);
     padding: var(--card-padding);
     border-radius: 0.5rem;
@@ -385,7 +426,8 @@ table {
     height: auto;
     background-position: center center;
     border-radius: 0.5rem;
-    min-width: 15rem;
+    min-width: 14rem;
+    width: 30%;
   }
   .paging__list {
     flex-direction: column;
@@ -410,7 +452,30 @@ table {
     position: static;
     width: auto;
   }
+  .field--input {
+    max-width: 100%;
+  }
   .form[data-page="5"] {
     padding: 0;
+  }
+}
+@media (min-width: 900px) {
+  .paging {
+    height: 568px;
+  }
+  .formsbuttons-wrapper {
+    justify-content: space-between;
+  }
+  .forms {
+    padding: 2rem;
+  }
+  .form-header {
+    font-size: 2.25rem;
+  }
+  .form-fields {
+    gap: 1.5rem;
+  }
+  .card {
+    gap: 5rem;
   }
 }/*# sourceMappingURL=styles.css.map */

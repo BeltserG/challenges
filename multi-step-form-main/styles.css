@@ -35,7 +35,8 @@ table {
   justify-content: space-between;
   background-color: hsl(217, 100%, 97%);
   width: 100%;
-  height: 100vh;
+  min-height: 550px;
+  height: 100dvh;
   position: relative;
 }
 
@@ -76,7 +77,7 @@ table {
   border-color: hsl(206, 94%, 87%);
 }
 
-.option--button--active {
+.button--active {
   color: hsl(213, 96%, 18%);
   background-color: hsl(206, 94%, 87%);
   border-color: hsl(206, 94%, 87%);
@@ -140,6 +141,7 @@ table {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  max-width: 20rem;
 }
 
 .label-wrapper {
@@ -165,7 +167,6 @@ table {
   border-radius: 0.5rem;
   padding: 0.65rem 1rem;
   font-size: 1rem;
-  max-width: 16rem;
   outline: 0;
 }
 
@@ -197,6 +198,11 @@ table {
 }
 
 .form-fields__option:has(input:checked) {
+  border: 1px solid hsl(213, 96%, 18%);
+  background-color: hsl(217, 100%, 97%);
+}
+
+.form-fields__option[checked=true] {
   border: 1px solid hsl(213, 96%, 18%);
   background-color: hsl(217, 100%, 97%);
 }
@@ -399,11 +405,14 @@ table {
 .field--label:hover,
 .field--input:hover,
 .step-buttons--back:hover,
-.step-buttons--next:hover {
+.step-buttons--next:hover,
+.form-:hover,
+.form-fields__option:hover,
+label:hover {
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 625px) {
   .multiform {
     display: flex;
     align-items: center;
@@ -423,7 +432,7 @@ table {
   }
   .paging {
     background-image: url(./assets/images/bg-sidebar-desktop.svg);
-    height: auto;
+    height: 568px;
     background-position: center center;
     border-radius: 0.5rem;
     min-width: 14rem;
@@ -448,12 +457,28 @@ table {
   .list__option--text {
     display: block;
   }
+  .formsbuttons-wrapper {
+    justify-content: space-between;
+    flex: 1;
+  }
   .forms {
     position: static;
-    width: auto;
+    width: 100%;
+  }
+  .form[data-page="2"] .form-fields {
+    flex-direction: row;
+  }
+  .field {
+    max-width: 100%;
   }
   .field--input {
     max-width: 100%;
+  }
+  .form[data-page="2"] .form-fields__option {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    gap: 3rem;
   }
   .form[data-page="5"] {
     padding: 0;
@@ -462,9 +487,6 @@ table {
 @media (min-width: 900px) {
   .paging {
     height: 568px;
-  }
-  .formsbuttons-wrapper {
-    justify-content: space-between;
   }
   .forms {
     padding: 2rem;

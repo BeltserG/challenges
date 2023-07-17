@@ -289,31 +289,40 @@ table {
   border-radius: 0.5rem;
 }
 
-#monthly {
-  color: hsl(213, 96%, 18%);
+.monthly {
+  color: hsl(231, 11%, 63%);
   font-size: 0.95rem;
 }
 
-#yearly {
+.yearly {
   color: hsl(231, 11%, 63%);
   font-size: 0.95rem;
-  font-weight: 500;
+}
+
+.sub-chosen {
+  color: hsl(213, 96%, 18%);
 }
 
 .toggle--button {
+  --button-width: 3rem;
   background-color: hsl(213, 96%, 18%);
   border: 0;
   outline: 0;
-  padding: 0.25rem;
-  border-radius: 1rem;
-  width: 2.5rem;
+  padding: calc(var(--button-width) * 0.1);
+  border-radius: calc(var(--button-width) * 0.3);
+  width: var(--button-width);
 }
 
 .button-circle {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: calc(var(--button-width) * 0.3);
+  height: calc(var(--button-width) * 0.3);
   background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
+  transition: transform 250ms;
+}
+
+.toggled {
+  transform: translateX(calc(var(--button-width) * 0.5));
 }
 
 .forms__cashout-wrapper {

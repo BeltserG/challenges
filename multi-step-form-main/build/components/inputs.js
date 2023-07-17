@@ -18,10 +18,6 @@ function formInputs(){
     })
 }
 
-//     forms.addEventListener("keyup", ()=>{
-//         console.log("1");
-//     })
-// }
 function inputErrorToggle(target) {
     if (!target.value){
         target.previousElementSibling.querySelector(".input-error").textContent = "This field is required";

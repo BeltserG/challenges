@@ -168,6 +168,8 @@ table {
   padding: 0.65rem 1rem;
   font-size: 1rem;
   outline: 0;
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
 }
 
 .input-active {
@@ -211,6 +213,10 @@ table {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.forms:has(.form[data-page="5"]) {
+  margin: auto 0;
 }
 
 .option--name {
@@ -400,6 +406,16 @@ table {
   border-radius: 0.25rem;
   padding: 0.75rem 1.5rem;
   margin-left: auto;
+  width: 8rem;
+}
+
+.step-buttons--next:hover,
+.step-buttons--back:hover {
+  opacity: 0.75;
+}
+
+.button-confirm {
+  background-color: hsl(243, 100%, 62%);
 }
 
 .field--label:hover,

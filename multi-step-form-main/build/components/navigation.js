@@ -1,4 +1,4 @@
-function navigation(){
+function navigation(dataInputsOptions){
     const navDots = document.querySelector(".paging__list");
     const cards = document.querySelectorAll('.form');
     let clicked = "1";
@@ -18,15 +18,15 @@ function navigation(){
                 clicked = String(clicked - 1);
                 cardsUpdate(cards,clicked);
                 buttonsUpdate(clicked, buttonsBottom)
-                console.log(clicked);
             }
         }else if(e.target.classList.contains("step-buttons--next")){
-            console.log(Number(clicked), cards.length)
-            if(Number(clicked) < cards.length){
-                clicked = String(Number(clicked) + 1);
-                cardsUpdate(cards,clicked);
-                buttonsUpdate(clicked, buttonsBottom)
-                console.log(clicked);
+            console.log(dataInputsOptions)
+            if(checkStep(clicked, dataInputsOptions)){
+                if(Number(clicked) < cards.length){
+                    clicked = String(Number(clicked) + 1);
+                    cardsUpdate(cards,clicked);
+                    buttonsUpdate(clicked, buttonsBottom)
+                }
             }
         }
     })
@@ -42,13 +42,11 @@ function cardsUpdate(cards,clicked) {
             // document.querySelector(".step-buttons--next").style.backgroundColor = "hsl(243, 100%, 62%)";
             if(Number(clicked) < cards.length){
                 document.querySelector(`.list__option--button[data-page="${clicked}"]`).classList.add("button--active");
-            }
-            
+            }   
         }
     }
 };
 function buttonsUpdate(clicked,buttons){
-    console.log(clicked);
     switch(clicked){
         case "1":
             buttons.style.display = "flex";
@@ -74,4 +72,32 @@ function buttonsUpdate(clicked,buttons){
             buttons.style.display = "none";
     }
 };
+function checkStep(clicked, data){
+    switch(clicked){
+        case "1":
+            const checkFirst = data => {
+                if (!data.name || !data.email || !data.phone){
+                    return false;
+                }
+                return true;
+            }
+            return checkFirst(data) ? true : false;
+        case "2":
+            const checkSecond = data => {
+                return data.subscription ? true : false;
+            }
+            console.log(checkSecond(data));
+            return checkSecond(data) ? true : false;
+        case "3":
+            const checkThird = data => {
+                for (let key in data.add_ons){
+                    if(data.add_ons[key]){
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return checkThird(data) ? true : false;
+    }
+}
 export default navigation;

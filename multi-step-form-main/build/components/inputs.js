@@ -1,4 +1,4 @@
-function formInputs(){
+function formInputs(data){
     const forms = document.querySelector(".form[data-page='1'] .form-fields");
 
     forms.addEventListener("focusin", (e)=>{
@@ -6,6 +6,7 @@ function formInputs(){
             e.target.classList.toggle("input-active");
         }
         e.target.addEventListener("keyup", (e)=>{
+            dataChange(data, e.target);
             inputErrorToggle(e.target);
         })
     })
@@ -19,7 +20,7 @@ function formInputs(){
 }
 
 function inputErrorToggle(target) {
-    if (!target.value){
+    if (!target.value.trim()){
         target.previousElementSibling.querySelector(".input-error").textContent = "This field is required";
         target.classList.add("input-empty")
     }
@@ -27,6 +28,10 @@ function inputErrorToggle(target) {
         target.previousElementSibling.querySelector(".input-error").textContent = "";
         target.classList.remove("input-empty")
     }
+}
+function dataChange(data, input){
+    let element = input.getAttribute("name");
+    data[element] = input.value;
 }
 // formInputs();
 export default  formInputs;

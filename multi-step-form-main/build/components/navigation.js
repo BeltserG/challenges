@@ -20,7 +20,6 @@ function navigation(dataInputsOptions){
                 buttonsUpdate(clicked, buttonsBottom)
             }
         }else if(e.target.classList.contains("step-buttons--next")){
-            console.log(dataInputsOptions)
             if(checkStep(clicked, dataInputsOptions)){
                 if(Number(clicked) < cards.length){
                     clicked = String(Number(clicked) + 1);
@@ -28,6 +27,7 @@ function navigation(dataInputsOptions){
                     buttonsUpdate(clicked, buttonsBottom)
                 }
             }
+            console.log(dataInputsOptions)
         }
     })
 };
@@ -39,7 +39,6 @@ function cardsUpdate(cards,clicked) {
             document.querySelector(`.list__option--button[data-page="${page}"]`)?.classList.remove("button--active");
         }else{
             card.style.display = 'flex';
-            // document.querySelector(".step-buttons--next").style.backgroundColor = "hsl(243, 100%, 62%)";
             if(Number(clicked) < cards.length){
                 document.querySelector(`.list__option--button[data-page="${clicked}"]`).classList.add("button--active");
             }   
@@ -75,6 +74,10 @@ function buttonsUpdate(clicked,buttons){
 function checkStep(clicked, data){
     switch(clicked){
         case "1":
+            const inputs = document.querySelectorAll(`input[type="text"]`);
+            for (let e of inputs) {
+                data[e.name] = e.value
+            }
             const checkFirst = data => {
                 if (!data.name || !data.email || !data.phone){
                     return false;
@@ -86,7 +89,6 @@ function checkStep(clicked, data){
             const checkSecond = data => {
                 return data.subscription ? true : false;
             }
-            console.log(checkSecond(data));
             return checkSecond(data) ? true : false;
         case "3":
             const checkThird = data => {

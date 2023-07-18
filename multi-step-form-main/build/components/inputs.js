@@ -6,7 +6,7 @@ function formInputs(data){
             e.target.classList.toggle("input-active");
         }
         e.target.addEventListener("keyup", (e)=>{
-            dataChange(data, e.target);
+            // dataChange(data, e.target);
             inputErrorToggle(e.target);
         })
     })
@@ -29,9 +29,9 @@ function inputErrorToggle(target) {
         target.classList.remove("input-empty")
     }
 }
-function dataChange(data, input){
-    let element = input.getAttribute("name");
-    data[element] = input.value;
-}
-// formInputs();
+// function dataChange(data, input){
+//     let element = input.getAttribute("name");
+//     data[element] = input.value;
+// }
+
 export default  formInputs;

@@ -13,7 +13,6 @@ function options(data){
     })
     const optionsThirdPage = document.querySelector('.form[data-page="3"]');
     optionsThirdPage.addEventListener('change', (e) => {
-        console.log(e.target.checked)
         const targetParent = e.target.closest(".form-fields__option");
         if(targetParent){
             if(e.target.checked){

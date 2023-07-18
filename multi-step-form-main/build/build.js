@@ -8,6 +8,7 @@ const userData = {
     email: "",
     phone: "",
     subcription: "",
+    duration: "",
     add_ons:{
         online_service: "",
         larger_storage: "",
@@ -19,15 +20,25 @@ const dataInputsOptions = {
     email: "",
     phone: "",
     subscription: "",
+    duration: "monthly",
     add_ons:{
         online_service: "",
         larger_storage: "",
         customizable_profile: ""
     }
 }
+const costs = {
+    subcription: {
+        arcade: 9,
+        advanced: 12,
+        pro: 15
+    },
+    duration:{
+        monthly: 1,
+        yearly: 0.85
+    }
+}
 navigation(dataInputsOptions);
 formInputs(dataInputsOptions);
 options(dataInputsOptions);
-toggleButton();
-
-// document.querySelector("body").addEventListener("click", () => console.log("yeah"));
+toggleButton(dataInputsOptions);

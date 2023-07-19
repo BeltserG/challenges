@@ -1,4 +1,4 @@
-function navigation(dataInputsOptions){
+function navigation(dataInputsOptions, costs){
     const navDots = document.querySelector(".paging__list");
     const cards = document.querySelectorAll('.form');
     let clicked = "1";
@@ -100,6 +100,9 @@ function checkStep(clicked, data){
                 return false;
             }
             return checkThird(data) ? true : false;
-    }
+   }
+}
+function updateCart (){
+    const form = document.querySelector(".")
 }
 export default navigation;

@@ -2,6 +2,7 @@ import navigation from "./components/navigation.js"
 import formInputs from "./components/inputs.js"
 import options from "./components/options.js"
 import toggleButton from "./components/toggle.js"
+import planUpdate from "./components/updates.js"
 const userData = {
     id:"1",
     name: "",
@@ -38,7 +39,8 @@ const costs = {
         yearly: 0.85
     }
 }
-navigation(dataInputsOptions);
+planUpdate(costs);
+navigation(dataInputsOptions, costs);
 formInputs(dataInputsOptions);
 options(dataInputsOptions);
 toggleButton(dataInputsOptions);

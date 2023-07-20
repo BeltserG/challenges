@@ -1,8 +1,7 @@
 import navigation from "./components/navigation.js"
 import formInputs from "./components/inputs.js"
 import options from "./components/options.js"
-import toggleButton from "./components/toggle.js"
-import planUpdate from "./components/updates.js"
+import {toggleButton, planUpdate} from "./components/toggle.js"
 const userData = {
     id:"1",
     name: "",
@@ -34,13 +33,14 @@ const costs = {
         advanced: 12,
         pro: 15
     },
-    duration:{
-        monthly: 1,
-        yearly: 0.85
-    }
+    add_ons:{
+        online_service: 1,
+        larger_storage: 2,
+        customizable_profile: 2
+    },
+    discount: "2 months free"
 }
-planUpdate(costs);
 navigation(dataInputsOptions, costs);
 formInputs(dataInputsOptions);
-options(dataInputsOptions);
-toggleButton(dataInputsOptions);
+options(dataInputsOptions, costs);
+toggleButton(dataInputsOptions, costs);

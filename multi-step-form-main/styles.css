@@ -199,6 +199,10 @@ table {
   padding: var(--card-padding);
 }
 
+.form-fields__option:hover {
+  border: 1px hsl(213, 96%, 18%) solid;
+}
+
 .form-fields__option:has(input:checked) {
   border: 1px solid hsl(213, 96%, 18%);
   background-color: hsl(217, 100%, 97%);
@@ -207,6 +211,16 @@ table {
 .form-fields__option[checked=true] {
   border: 1px solid hsl(213, 96%, 18%);
   background-color: hsl(217, 100%, 97%);
+}
+
+.option--text--bonus {
+  display: block;
+  color: hsl(213, 96%, 18%);
+  height: 1rem;
+}
+
+.add-on--cost {
+  margin-left: auto;
 }
 
 .form-fields__option-wrapper {
@@ -228,6 +242,7 @@ table {
   color: hsl(231, 11%, 63%);
   font-size: 500;
   font-size: 0.8rem;
+  line-height: 1.2rem;
 }
 
 .checkbox-wrapper {
@@ -418,9 +433,12 @@ table {
   width: 8rem;
 }
 
-.step-buttons--next:hover,
-.step-buttons--back:hover {
+.step-buttons--next:hover {
   opacity: 0.75;
+}
+
+.step-buttons--back:hover {
+  color: hsl(213, 96%, 18%);
 }
 
 .button-confirm {
@@ -433,7 +451,8 @@ table {
 .step-buttons--next:hover,
 .form-:hover,
 .form-fields__option:hover,
-label:hover {
+label:hover,
+.cashout-position--change:hover {
   cursor: pointer;
 }
 

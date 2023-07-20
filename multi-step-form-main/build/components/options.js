@@ -1,4 +1,4 @@
-function options(data){
+function options(data, costs){
     const optionsSecondpage = document.querySelector('.form[data-page="2"]');
     optionsSecondpage.addEventListener('click',(e)=>{
         const targetParent = e.target.closest(".form-fields__option");
@@ -12,6 +12,11 @@ function options(data){
         }
     })
     const optionsThirdPage = document.querySelector('.form[data-page="3"]');
+    const add_onCosts = optionsThirdPage.querySelectorAll('.add-on--cost');
+    for (let item of add_onCosts) {
+        const value = costs.add_ons[item.previousElementSibling.getAttribute("for")];
+        item.textContent = `+$${value}/mo`;
+    }
     optionsThirdPage.addEventListener('change', (e) => {
         const targetParent = e.target.closest(".form-fields__option");
         if(targetParent){

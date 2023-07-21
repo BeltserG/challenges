@@ -113,6 +113,9 @@ table {
   padding: calc(var(--card-padding) * 1.5);
   position: absolute;
   top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .form {
@@ -221,6 +224,7 @@ table {
 
 .add-on--cost {
   margin-left: auto;
+  color: hsl(243, 100%, 62%);
 }
 
 .form-fields__option-wrapper {
@@ -230,7 +234,7 @@ table {
 }
 
 .forms:has(.form[data-page="5"]) {
-  margin: auto 0;
+  justify-content: center;
 }
 
 .option--name {
@@ -361,6 +365,7 @@ table {
   color: hsl(231, 11%, 63%);
   font-size: 0.9rem;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .forms__cashout-position:first-child .cashout-position--header,
@@ -407,6 +412,10 @@ table {
 }
 
 .step-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
   display: flex;
   align-items: center;
   padding: calc(var(--card-padding) * 1.5);
@@ -508,6 +517,7 @@ label:hover,
   .forms {
     position: static;
     width: 100%;
+    height: 100%;
   }
   .form[data-page="2"] .form-fields {
     flex-direction: row;
@@ -523,6 +533,10 @@ label:hover,
     width: 100%;
     align-items: flex-start;
     gap: 3rem;
+  }
+  .step-buttons {
+    position: static;
+    width: 100%;
   }
   .form[data-page="5"] {
     padding: 0;

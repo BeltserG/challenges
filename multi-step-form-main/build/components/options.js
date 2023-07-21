@@ -8,7 +8,7 @@ function options(data, costs){
                 option.setAttribute('checked', false);
             }
             targetParent.setAttribute('checked', true);
-            data.subscription = targetParent.querySelector('.option--name').textContent;
+            data.subscription = targetParent.querySelector('.option--name').textContent.toLowerCase();
         }
     })
     const optionsThirdPage = document.querySelector('.form[data-page="3"]');
@@ -26,6 +26,7 @@ function options(data, costs){
                 data.add_ons[targetParent.getAttribute("for")] = false;
             }
         }
+        console.log(data);
     })
 }
 export default options;

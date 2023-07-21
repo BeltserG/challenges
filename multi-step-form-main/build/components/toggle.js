@@ -12,14 +12,13 @@ function toggleButton(data, costs){
             toggle.querySelector(".yearly").classList.toggle("sub-chosen");
             planUpdate(data,costs);
         }
-        console.log(data)
     })
 }
 function planUpdate (data,costs){
     const secondPage = document.querySelector(`.form[data-page="2"]`);
     const costElements = secondPage.querySelectorAll('.option--text--cost');
     for (let item of costElements){
-        const value = costs.subcription[item.closest(".form-fields__option-wrapper").firstElementChild.textContent.toLowerCase()];
+        const value = costs.subscription[item.closest(".form-fields__option-wrapper").firstElementChild.textContent.toLowerCase()];
         if(data.duration === "monthly"){
             item.textContent = `$${value}/mo`;
             item.nextElementSibling.textContent = "";

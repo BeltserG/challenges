@@ -2,19 +2,7 @@ import navigation from "./components/navigation.js"
 import formInputs from "./components/inputs.js"
 import options from "./components/options.js"
 import {toggleButton, planUpdate} from "./components/toggle.js"
-const userData = {
-    id:"1",
-    name: "",
-    email: "",
-    phone: "",
-    subcription: "",
-    duration: "",
-    add_ons:{
-        online_service: "",
-        larger_storage: "",
-        customizable_profile: ""
-    } 
-}
+
 const dataInputsOptions = {
     name: "",
     email: "",
@@ -22,13 +10,13 @@ const dataInputsOptions = {
     subscription: "",
     duration: "monthly",
     add_ons:{
-        online_service: "",
-        larger_storage: "",
-        customizable_profile: ""
+        online_service: false,
+        larger_storage: false,
+        customizable_profile: false
     }
 }
 const costs = {
-    subcription: {
+    subscription: {
         arcade: 9,
         advanced: 12,
         pro: 15

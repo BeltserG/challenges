@@ -1,17 +1,19 @@
 function navigation(dataInputsOptions, costs){
     const navDots = document.querySelector(".paging__list");
     const cards = document.querySelectorAll('.form');
-    let clicked = "4";
-    cardsUpdate(cards,clicked);
-    navDots.addEventListener("click", (e)=>{
-        if (e.target.classList.contains("list__option--button")){
-            clicked = e.target.getAttribute("data-page");
-        }
-        cardsUpdate(cards,clicked,navDots);
-        buttonsUpdate(clicked, buttonsBottom);
-    });
-
     const buttonsBottom = document.querySelector(".step-buttons");
+    let clicked = "1";
+    cardsUpdate(cards,clicked);
+    buttonsUpdate(clicked,buttonsBottom);
+    // navDots.addEventListener("click", (e)=>{
+    //     if (e.target.classList.contains("list__option--button")){
+    //         clicked = e.target.getAttribute("data-page");
+    //     }
+    //     cardsUpdate(cards,clicked,navDots);
+    //     buttonsUpdate(clicked, buttonsBottom);
+    // });
+
+    
     buttonsBottom.addEventListener("click", (e) =>{
         if(e.target.classList.contains("step-buttons--back")){
             if(Number(clicked) > 1){
@@ -20,21 +22,26 @@ function navigation(dataInputsOptions, costs){
                 buttonsUpdate(clicked, buttonsBottom)
             }
         }else if(e.target.classList.contains("step-buttons--next")){
-            if(checkStep(clicked, dataInputsOptions, costs)){
+            const response = checkStep(clicked, dataInputsOptions, costs, buttonsBottom);
+            if(response){
                 if(Number(clicked) < cards.length){
                     clicked = String(Number(clicked) + 1);
                     cardsUpdate(cards,clicked);
-                    buttonsUpdate(clicked, buttonsBottom)
+                    buttonsUpdate(clicked, buttonsBottom);
+                    if (response === "planChange"){
+                        const changeButton = document.querySelector(".cashout-position--change");
+                        console.log("main")
+                        changeButton.addEventListener("click", () =>{
+                            clicked = changePlan(cards,clicked);
+                            cardsUpdate(cards,clicked);
+                            buttonsUpdate(clicked, buttonsBottom);
+                        })
+                    }
                 }
             }
-            console.log(dataInputsOptions)
+            console.log(clicked);
         }
     })
-    const changeButton = document.querySelector(".cashout-position--change");
-    console.log(changeButton)
-    changeButton.addEventListener("click", ()=>{
-        changePlan(cards, clicked);
-    });
 };
 function cardsUpdate(cards,clicked) {
     for (let card of cards) {
@@ -54,21 +61,25 @@ function buttonsUpdate(clicked,buttons){
     switch(clicked){
         case "1":
             buttons.style.display = "flex";
+            buttons.querySelector(".step-buttons--back").style.display = "none"
             buttons.querySelector(".step-buttons--next").classList.remove("button-confirm");
             buttons.querySelector(".step-buttons--next").textContent = "Next Step";
             break
         case "2":
             buttons.style.display = "flex";
+            buttons.querySelector(".step-buttons--back").style.display = "flex"
             buttons.querySelector(".step-buttons--next").classList.remove("button-confirm");
             buttons.querySelector(".step-buttons--next").textContent = "Next Step";
             break
         case "3":
             buttons.style.display = "flex";
+            buttons.querySelector(".step-buttons--back").style.display = "flex"
             buttons.querySelector(".step-buttons--next").classList.remove("button-confirm");
             buttons.querySelector(".step-buttons--next").textContent = "Next Step";
             break
         case "4":
             buttons.style.display = "flex";
+            buttons.querySelector(".step-buttons--back").style.display = "flex"
             buttons.querySelector(".step-buttons--next").classList.add("button-confirm");
             buttons.querySelector(".step-buttons--next").textContent = "Confirm";
             break
@@ -102,11 +113,11 @@ function checkStep(clicked, data, costs){
                 return false;
             }
             if(checkThird){
-                costCalculation(data,costs);
+                createCashoutPage(data, costs);
+                return "planChange";
             }
             return checkThird(data);
         case "4":
-
             return true;
    }
 }
@@ -116,11 +127,71 @@ function changePlan (cards, clicked){
         card.getAttribute("data-page") !== clicked ? 
         card.style.display = 'none': card.style.display = 'flex';
     }
+    return clicked;
 }
-function costCalculation(data, costs){
+function createCashoutPage(data, costs) {
     const page = document.querySelector(".form[data-page='4']");
-    const plan = page.querySelector(".cashout-position--header");
+    const list = document.createElement("div");
+    list.className = "form-fields forms__cashout-wrapper";
+    const duration = data.duration === "monthly";
+    console.log(duration)
+    let totalCost = 0;
+    let planExists = list.querySelector(".forms__cashout-position");
+    let plan = document.createElement("div");
+    plan.classList.add("forms__cashout-position");
+    let planText = "";
+    if (duration){
+        planText = `$${costs.subscription[data.subscription]}/mo`
+        totalCost += costs.subscription[data.subscription]; 
+    }else{
+        planText = `$${costs.subscription[data.subscription]*10}/yr`
+        totalCost += costs.subscription[data.subscription]*10; 
+    }
+    plan.innerHTML = `
+        <h3 class="cashout-position--header">${data.subscription} (${data.duration})
+            <span class="cashout-position--change">Change</span>
+        </h3>
+        <p class="cashout-position--text">${planText}</p>`
+    console.log(plan)
+    planExists ? list.replaceChild(plan, planExists) : list.appendChild(plan);
     
-    console.log(page)
+    for(let item in data.add_ons){
+        const elementExists = list.querySelector(`#${item}`);
+        if(data.add_ons[item]){
+            let position = document.createElement("div");
+            position.classList.add("forms__cashout-position");
+            position.setAttribute("id", item);
+            let planText = "";
+            if(duration){
+                planText = `$${costs.add_ons[item]}/mo`
+                totalCost += costs.add_ons[item];
+            }else{
+                planText = `$${costs.add_ons[item]*10}/yr`
+                totalCost += costs.add_ons[item]*10;
+            }
+            position.innerHTML = `
+                <h3 class="cashout-position--header">${item.split("_").join(" ")}</h3>
+                <p class="cashout-position--text">${planText}</p>`
+
+            list.appendChild(position);
+            elementExists ? list.replaceChild(position, elementExists) : list.appendChild(position); 
+        }else{
+            if(elementExists){
+                list.removeChild(elementExists);
+            }
+        }
+    }
+    let totalElement = document.createElement('div');
+    totalElement.className = "forms__cashout-position total";
+    totalElement.innerHTML = `
+        <h3 class="cashout-position--header">Total (per ${duration ? "month":"year"})</h3>
+        <p class="cashout-position--text">$${totalCost}/${duration ? "mo":"yr"}</p>
+    `
+    page.querySelector(`.forms__cashout-wrapper`) ?
+        page.replaceChild(list, page.querySelector(`.forms__cashout-wrapper`)) :
+        page.appendChild(list);
+    page.querySelector(`.total`) ?
+        page.replaceChild(totalElement, page.querySelector(`.total`)) :
+        page.appendChild(totalElement);
 }
 export default navigation;

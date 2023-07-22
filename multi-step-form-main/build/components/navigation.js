@@ -30,7 +30,6 @@ function navigation(dataInputsOptions, costs){
                     buttonsUpdate(clicked, buttonsBottom);
                     if (response === "planChange"){
                         const changeButton = document.querySelector(".cashout-position--change");
-                        console.log("main")
                         changeButton.addEventListener("click", () =>{
                             clicked = changePlan(cards,clicked);
                             cardsUpdate(cards,clicked);
@@ -39,7 +38,6 @@ function navigation(dataInputsOptions, costs){
                     }
                 }
             }
-            console.log(clicked);
         }
     })
 };
@@ -134,11 +132,10 @@ function createCashoutPage(data, costs) {
     const list = document.createElement("div");
     list.className = "form-fields forms__cashout-wrapper";
     const duration = data.duration === "monthly";
-    console.log(duration)
     let totalCost = 0;
     let planExists = list.querySelector(".forms__cashout-position");
     let plan = document.createElement("div");
-    plan.classList.add("forms__cashout-position");
+    plan.classList.add("forms__cashout-position", "plan");
     let planText = "";
     if (duration){
         planText = `$${costs.subscription[data.subscription]}/mo`
@@ -152,7 +149,6 @@ function createCashoutPage(data, costs) {
             <span class="cashout-position--change">Change</span>
         </h3>
         <p class="cashout-position--text">${planText}</p>`
-    console.log(plan)
     planExists ? list.replaceChild(plan, planExists) : list.appendChild(plan);
     
     for(let item in data.add_ons){

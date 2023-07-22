@@ -26,7 +26,6 @@ function options(data, costs){
                 data.add_ons[targetParent.getAttribute("for")] = false;
             }
         }
-        console.log(data);
     })
 }
 export default options;

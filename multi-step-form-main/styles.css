@@ -71,12 +71,6 @@ table {
   font-size: 1rem;
 }
 
-.list__option--button:hover {
-  color: hsl(213, 96%, 18%);
-  background-color: hsl(206, 94%, 87%);
-  border-color: hsl(206, 94%, 87%);
-}
-
 .button--active {
   color: hsl(213, 96%, 18%);
   background-color: hsl(206, 94%, 87%);
@@ -121,7 +115,7 @@ table {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .form-header {
@@ -154,7 +148,7 @@ table {
 
 .field--label {
   text-transform: capitalize;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: hsl(213, 96%, 18%);
   font-weight: 500;
 }
@@ -168,11 +162,21 @@ table {
 .field--input {
   border: 1px hsl(229, 24%, 87%) solid;
   border-radius: 0.5rem;
-  padding: 0.65rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   outline: 0;
-  font-weight: 700;
+  font-weight: 500;
   color: hsl(213, 96%, 18%);
+}
+
+.field--input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.field--input::placeholder {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .input-active {
@@ -197,9 +201,9 @@ table {
   border: 1px hsl(229, 24%, 87%) solid;
   border-radius: 0.5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
-  padding: var(--card-padding);
+  padding: calc(var(--card-padding) / 1.5);
 }
 
 .form-fields__option:hover {
@@ -234,7 +238,7 @@ table {
 }
 
 .forms:has(.form[data-page="5"]) {
-  justify-content: center;
+  margin: auto 0;
 }
 
 .option--name {
@@ -381,7 +385,7 @@ table {
 .forms__cashout-position.total .cashout-position--text {
   font-weight: 700;
   color: hsl(243, 100%, 62%);
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .cashout-position--change {
@@ -399,6 +403,7 @@ table {
 
 .form[data-page="5"] {
   align-items: center;
+  margin: auto 0;
   text-align: center;
   padding: 3.5rem 0rem;
 }
@@ -418,26 +423,31 @@ table {
   width: 100vw;
   display: flex;
   align-items: center;
-  padding: calc(var(--card-padding) * 1.5);
+  padding: var(--card-padding);
   background-color: hsl(0, 0%, 100%);
+}
+
+.plan {
+  border-bottom: 1px solid hsl(229, 24%, 87%);
+  padding-bottom: 1.5rem;
 }
 
 .step-buttons--back {
   background: transparent;
   border: 0;
-  font-weight: 500;
+  font-weight: 700;
   color: hsl(231, 11%, 63%);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .step-buttons--next {
   background-color: hsl(213, 96%, 18%);
   color: hsl(217, 100%, 97%);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   border: 0;
-  border-radius: 0.25rem;
-  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
   margin-left: auto;
   width: 8rem;
 }
@@ -463,6 +473,10 @@ table {
 label:hover,
 .cashout-position--change:hover {
   cursor: pointer;
+}
+
+.field--input:hover {
+  border: 1px solid hsl(213, 96%, 18%);
 }
 
 @media (min-width: 625px) {
@@ -554,6 +568,9 @@ label:hover,
   }
   .form-fields {
     gap: 1.5rem;
+  }
+  .form-fields__option {
+    padding: var(--card-padding);
   }
   .card {
     gap: 5rem;

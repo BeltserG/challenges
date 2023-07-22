@@ -3,10 +3,10 @@ function formInputs(data){
 
     forms.addEventListener("focusin", (e)=>{
         if (e.target.classList.contains("field--input")){
-            e.target.classList.toggle("input-active");
+            e.target.classList.toggle("input-active")
+
         }
         e.target.addEventListener("keyup", (e)=>{
-            // dataChange(data, e.target);
             inputErrorToggle(e.target);
         })
     })
@@ -14,8 +14,13 @@ function formInputs(data){
     forms.addEventListener("focusout", (e)=>{
         if (e.target.classList.contains("field--input")){
             e.target.classList.toggle("input-active");
+            if(e.target.getAttribute("name") === "email"){
+                if(!emailValidation(e.target.value.trim())){
+                    e.target.previousElementSibling.querySelector(".input-error").textContent = "Please, provide a valid address";
+                    e.target.classList.add("input-empty");
+                }
+            }
         }
-        inputErrorToggle(e.target);
     })
 }
 
@@ -33,5 +38,8 @@ function inputErrorToggle(target) {
 //     let element = input.getAttribute("name");
 //     data[element] = input.value;
 // }
-
+function emailValidation(text){
+    const emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "gm");
+    return emailRegex.test(text);
+}
 export default  formInputs;
